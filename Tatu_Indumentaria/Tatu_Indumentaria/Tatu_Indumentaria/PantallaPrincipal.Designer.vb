@@ -279,11 +279,13 @@ Partial Class PantallaPrincipal
         '
         Me.btnSalir.BackColor = System.Drawing.Color.LightCyan
         Me.btnSalir.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.Location = New System.Drawing.Point(831, 513)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(75, 30)
+        Me.btnSalir.Size = New System.Drawing.Size(84, 45)
         Me.btnSalir.TabIndex = 18
         Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSalir.UseVisualStyleBackColor = False
         '
         'btnEmpleados
