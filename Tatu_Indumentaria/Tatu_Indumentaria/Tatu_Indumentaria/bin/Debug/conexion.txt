@@ -1,0 +1,1 @@
+server=localhost; user id=root; password=1234;database=tatu_indumentaria_PRUEBA;port=3306;
