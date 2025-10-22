@@ -32,7 +32,6 @@ Partial Class PantallaPrincipal
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBuscador = New System.Windows.Forms.TextBox()
-        Me.btnProveedores = New System.Windows.Forms.Button()
         Me.lvwStock = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -48,13 +47,14 @@ Partial Class PantallaPrincipal
         Me.btnAplicar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnEmpleados = New System.Windows.Forms.Button()
-        Me.btnEnvios = New System.Windows.Forms.Button()
-        Me.btnClientes = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.btnLocalidades = New System.Windows.Forms.Button()
-        Me.btnVentas = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
+        Me.btnProveedores = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
+        Me.btnLocalidades = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnClientes = New System.Windows.Forms.Button()
+        Me.btnEnvios = New System.Windows.Forms.Button()
+        Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -150,19 +150,6 @@ Partial Class PantallaPrincipal
         Me.txtBuscador.Size = New System.Drawing.Size(253, 25)
         Me.txtBuscador.TabIndex = 12
         '
-        'btnProveedores
-        '
-        Me.btnProveedores.BackColor = System.Drawing.Color.LightCyan
-        Me.btnProveedores.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnProveedores.Image = CType(resources.GetObject("btnProveedores.Image"), System.Drawing.Image)
-        Me.btnProveedores.Location = New System.Drawing.Point(12, 404)
-        Me.btnProveedores.Name = "btnProveedores"
-        Me.btnProveedores.Size = New System.Drawing.Size(180, 49)
-        Me.btnProveedores.TabIndex = 7
-        Me.btnProveedores.Text = "Proveedores"
-        Me.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnProveedores.UseVisualStyleBackColor = False
-        '
         'lvwStock
         '
         Me.lvwStock.BackColor = System.Drawing.Color.SeaShell
@@ -228,11 +215,13 @@ Partial Class PantallaPrincipal
         Me.btnLimpiar.BackColor = System.Drawing.Color.LightCyan
         Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.Location = New System.Drawing.Point(921, 513)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(151, 30)
+        Me.btnLimpiar.Size = New System.Drawing.Size(156, 45)
         Me.btnLimpiar.TabIndex = 17
         Me.btnLimpiar.Text = "Limpiar Busqueda"
+        Me.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLimpiar.UseVisualStyleBackColor = False
         '
         'Label2
@@ -288,70 +277,31 @@ Partial Class PantallaPrincipal
         Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'btnEmpleados
+        'btnProductos
         '
-        Me.btnEmpleados.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEmpleados.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnEmpleados.Image = CType(resources.GetObject("btnEmpleados.Image"), System.Drawing.Image)
-        Me.btnEmpleados.Location = New System.Drawing.Point(12, 184)
-        Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Size = New System.Drawing.Size(180, 49)
-        Me.btnEmpleados.TabIndex = 3
-        Me.btnEmpleados.Text = "Empleados"
-        Me.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEmpleados.UseVisualStyleBackColor = False
+        Me.btnProductos.BackColor = System.Drawing.Color.LightCyan
+        Me.btnProductos.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
+        Me.btnProductos.Location = New System.Drawing.Point(12, 349)
+        Me.btnProductos.Name = "btnProductos"
+        Me.btnProductos.Size = New System.Drawing.Size(180, 49)
+        Me.btnProductos.TabIndex = 6
+        Me.btnProductos.Text = "Productos"
+        Me.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnProductos.UseVisualStyleBackColor = False
         '
-        'btnEnvios
+        'btnProveedores
         '
-        Me.btnEnvios.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEnvios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnEnvios.Image = CType(resources.GetObject("btnEnvios.Image"), System.Drawing.Image)
-        Me.btnEnvios.Location = New System.Drawing.Point(12, 239)
-        Me.btnEnvios.Name = "btnEnvios"
-        Me.btnEnvios.Size = New System.Drawing.Size(180, 49)
-        Me.btnEnvios.TabIndex = 4
-        Me.btnEnvios.Text = "Envios"
-        Me.btnEnvios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEnvios.UseVisualStyleBackColor = False
-        '
-        'btnClientes
-        '
-        Me.btnClientes.BackColor = System.Drawing.Color.LightCyan
-        Me.btnClientes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
-        Me.btnClientes.Location = New System.Drawing.Point(12, 67)
-        Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Size = New System.Drawing.Size(180, 49)
-        Me.btnClientes.TabIndex = 1
-        Me.btnClientes.Text = "Clientes"
-        Me.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClientes.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.LightCyan
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(12, 129)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(180, 49)
-        Me.Button5.TabIndex = 2
-        Me.Button5.Text = "Compras"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'btnLocalidades
-        '
-        Me.btnLocalidades.BackColor = System.Drawing.Color.LightCyan
-        Me.btnLocalidades.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnLocalidades.Image = CType(resources.GetObject("btnLocalidades.Image"), System.Drawing.Image)
-        Me.btnLocalidades.Location = New System.Drawing.Point(11, 294)
-        Me.btnLocalidades.Name = "btnLocalidades"
-        Me.btnLocalidades.Size = New System.Drawing.Size(180, 49)
-        Me.btnLocalidades.TabIndex = 5
-        Me.btnLocalidades.Text = "Localidades"
-        Me.btnLocalidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLocalidades.UseVisualStyleBackColor = False
+        Me.btnProveedores.BackColor = System.Drawing.Color.LightCyan
+        Me.btnProveedores.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnProveedores.Image = CType(resources.GetObject("btnProveedores.Image"), System.Drawing.Image)
+        Me.btnProveedores.Location = New System.Drawing.Point(12, 404)
+        Me.btnProveedores.Name = "btnProveedores"
+        Me.btnProveedores.Size = New System.Drawing.Size(180, 49)
+        Me.btnProveedores.TabIndex = 7
+        Me.btnProveedores.Text = "Proveedores"
+        Me.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnProveedores.UseVisualStyleBackColor = False
         '
         'btnVentas
         '
@@ -366,18 +316,70 @@ Partial Class PantallaPrincipal
         Me.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnVentas.UseVisualStyleBackColor = False
         '
-        'btnProductos
+        'btnLocalidades
         '
-        Me.btnProductos.BackColor = System.Drawing.Color.LightCyan
-        Me.btnProductos.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
-        Me.btnProductos.Location = New System.Drawing.Point(12, 349)
-        Me.btnProductos.Name = "btnProductos"
-        Me.btnProductos.Size = New System.Drawing.Size(180, 49)
-        Me.btnProductos.TabIndex = 6
-        Me.btnProductos.Text = "Productos"
-        Me.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnProductos.UseVisualStyleBackColor = False
+        Me.btnLocalidades.BackColor = System.Drawing.Color.LightCyan
+        Me.btnLocalidades.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnLocalidades.Image = CType(resources.GetObject("btnLocalidades.Image"), System.Drawing.Image)
+        Me.btnLocalidades.Location = New System.Drawing.Point(11, 294)
+        Me.btnLocalidades.Name = "btnLocalidades"
+        Me.btnLocalidades.Size = New System.Drawing.Size(180, 49)
+        Me.btnLocalidades.TabIndex = 5
+        Me.btnLocalidades.Text = "Localidades"
+        Me.btnLocalidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLocalidades.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.LightCyan
+        Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.Location = New System.Drawing.Point(12, 129)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(180, 49)
+        Me.Button5.TabIndex = 2
+        Me.Button5.Text = "Compras"
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'btnClientes
+        '
+        Me.btnClientes.BackColor = System.Drawing.Color.LightCyan
+        Me.btnClientes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
+        Me.btnClientes.Location = New System.Drawing.Point(12, 67)
+        Me.btnClientes.Name = "btnClientes"
+        Me.btnClientes.Size = New System.Drawing.Size(180, 49)
+        Me.btnClientes.TabIndex = 1
+        Me.btnClientes.Text = "Clientes"
+        Me.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClientes.UseVisualStyleBackColor = False
+        '
+        'btnEnvios
+        '
+        Me.btnEnvios.BackColor = System.Drawing.Color.LightCyan
+        Me.btnEnvios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnEnvios.Image = CType(resources.GetObject("btnEnvios.Image"), System.Drawing.Image)
+        Me.btnEnvios.Location = New System.Drawing.Point(12, 239)
+        Me.btnEnvios.Name = "btnEnvios"
+        Me.btnEnvios.Size = New System.Drawing.Size(180, 49)
+        Me.btnEnvios.TabIndex = 4
+        Me.btnEnvios.Text = "Envios"
+        Me.btnEnvios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEnvios.UseVisualStyleBackColor = False
+        '
+        'btnEmpleados
+        '
+        Me.btnEmpleados.BackColor = System.Drawing.Color.LightCyan
+        Me.btnEmpleados.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnEmpleados.Image = CType(resources.GetObject("btnEmpleados.Image"), System.Drawing.Image)
+        Me.btnEmpleados.Location = New System.Drawing.Point(12, 184)
+        Me.btnEmpleados.Name = "btnEmpleados"
+        Me.btnEmpleados.Size = New System.Drawing.Size(180, 49)
+        Me.btnEmpleados.TabIndex = 3
+        Me.btnEmpleados.Text = "Empleados"
+        Me.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEmpleados.UseVisualStyleBackColor = False
         '
         'PantallaPrincipal
         '
@@ -418,7 +420,6 @@ Partial Class PantallaPrincipal
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnEmpleados As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -428,12 +429,6 @@ Partial Class PantallaPrincipal
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBuscador As System.Windows.Forms.TextBox
-    Friend WithEvents btnEnvios As System.Windows.Forms.Button
-    Friend WithEvents btnClientes As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents btnVentas As System.Windows.Forms.Button
-    Friend WithEvents btnProveedores As System.Windows.Forms.Button
-    Friend WithEvents btnProductos As System.Windows.Forms.Button
     Friend WithEvents lvwStock As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
@@ -447,7 +442,14 @@ Partial Class PantallaPrincipal
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
     Friend WithEvents btnAplicar As System.Windows.Forms.Button
-    Friend WithEvents btnLocalidades As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
+    Friend WithEvents btnProductos As System.Windows.Forms.Button
+    Friend WithEvents btnProveedores As System.Windows.Forms.Button
+    Friend WithEvents btnVentas As System.Windows.Forms.Button
+    Friend WithEvents btnLocalidades As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents btnClientes As System.Windows.Forms.Button
+    Friend WithEvents btnEnvios As System.Windows.Forms.Button
+    Friend WithEvents btnEmpleados As System.Windows.Forms.Button
 End Class
