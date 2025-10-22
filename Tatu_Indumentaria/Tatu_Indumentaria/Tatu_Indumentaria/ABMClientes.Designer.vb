@@ -58,10 +58,9 @@ Partial Class ABMClientes
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.chkDni = New System.Windows.Forms.CheckBox()
         Me.chkNombre = New System.Windows.Forms.CheckBox()
+        Me.chkDni = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label3
@@ -346,7 +345,7 @@ Partial Class ABMClientes
         Me.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCiudad.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbCiudad.FormattingEnabled = True
-        Me.cmbCiudad.Location = New System.Drawing.Point(295, 380)
+        Me.cmbCiudad.Location = New System.Drawing.Point(295, 383)
         Me.cmbCiudad.Name = "cmbCiudad"
         Me.cmbCiudad.Size = New System.Drawing.Size(148, 25)
         Me.cmbCiudad.TabIndex = 9
@@ -357,7 +356,7 @@ Partial Class ABMClientes
         Me.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProvincia.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbProvincia.FormattingEnabled = True
-        Me.cmbProvincia.Location = New System.Drawing.Point(295, 410)
+        Me.cmbProvincia.Location = New System.Drawing.Point(295, 413)
         Me.cmbProvincia.Name = "cmbProvincia"
         Me.cmbProvincia.Size = New System.Drawing.Size(148, 25)
         Me.cmbProvincia.TabIndex = 10
@@ -368,7 +367,7 @@ Partial Class ABMClientes
         Me.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbPais.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbPais.FormattingEnabled = True
-        Me.cmbPais.Location = New System.Drawing.Point(295, 440)
+        Me.cmbPais.Location = New System.Drawing.Point(295, 443)
         Me.cmbPais.Name = "cmbPais"
         Me.cmbPais.Size = New System.Drawing.Size(148, 25)
         Me.cmbPais.TabIndex = 11
@@ -379,7 +378,7 @@ Partial Class ABMClientes
         Me.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGenero.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbGenero.FormattingEnabled = True
-        Me.cmbGenero.Location = New System.Drawing.Point(295, 350)
+        Me.cmbGenero.Location = New System.Drawing.Point(295, 353)
         Me.cmbGenero.Name = "cmbGenero"
         Me.cmbGenero.Size = New System.Drawing.Size(148, 25)
         Me.cmbGenero.TabIndex = 8
@@ -398,7 +397,7 @@ Partial Class ABMClientes
         '
         Me.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaNac.Location = New System.Drawing.Point(295, 320)
-        Me.dtpFechaNac.MinimumSize = New System.Drawing.Size(0, 25)
+        Me.dtpFechaNac.MinimumSize = New System.Drawing.Size(4, 25)
         Me.dtpFechaNac.Name = "dtpFechaNac"
         Me.dtpFechaNac.Size = New System.Drawing.Size(148, 25)
         Me.dtpFechaNac.TabIndex = 7
@@ -439,19 +438,6 @@ Partial Class ABMClientes
         Me.Label15.TabIndex = 134
         Me.Label15.Text = "Buscar Clientes"
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(477, 35)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(120, 40)
-        Me.btnBuscar.TabIndex = 133
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
         'txtBusqueda
         '
         Me.txtBusqueda.BackColor = System.Drawing.Color.SeaShell
@@ -462,17 +448,6 @@ Partial Class ABMClientes
         Me.txtBusqueda.Size = New System.Drawing.Size(134, 30)
         Me.txtBusqueda.TabIndex = 132
         '
-        'chkDni
-        '
-        Me.chkDni.AutoSize = True
-        Me.chkDni.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.chkDni.Location = New System.Drawing.Point(311, 25)
-        Me.chkDni.Name = "chkDni"
-        Me.chkDni.Size = New System.Drawing.Size(56, 23)
-        Me.chkDni.TabIndex = 135
-        Me.chkDni.Text = "DNI"
-        Me.chkDni.UseVisualStyleBackColor = True
-        '
         'chkNombre
         '
         Me.chkNombre.AutoSize = True
@@ -480,9 +455,20 @@ Partial Class ABMClientes
         Me.chkNombre.Location = New System.Drawing.Point(311, 57)
         Me.chkNombre.Name = "chkNombre"
         Me.chkNombre.Size = New System.Drawing.Size(82, 23)
-        Me.chkNombre.TabIndex = 136
+        Me.chkNombre.TabIndex = 244
         Me.chkNombre.Text = "Nombre"
         Me.chkNombre.UseVisualStyleBackColor = True
+        '
+        'chkDni
+        '
+        Me.chkDni.AutoSize = True
+        Me.chkDni.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.chkDni.Location = New System.Drawing.Point(311, 25)
+        Me.chkDni.Name = "chkDni"
+        Me.chkDni.Size = New System.Drawing.Size(56, 23)
+        Me.chkDni.TabIndex = 243
+        Me.chkDni.Text = "DNI"
+        Me.chkDni.UseVisualStyleBackColor = True
         '
         'ABMClientes
         '
@@ -492,7 +478,6 @@ Partial Class ABMClientes
         Me.Controls.Add(Me.chkNombre)
         Me.Controls.Add(Me.chkDni)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dtpFechaNac)
@@ -572,8 +557,7 @@ Partial Class ABMClientes
     Friend WithEvents btnVolver As System.Windows.Forms.Button
     Friend WithEvents btnEditar As System.Windows.Forms.Button
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
-    Friend WithEvents chkDni As System.Windows.Forms.CheckBox
     Friend WithEvents chkNombre As System.Windows.Forms.CheckBox
+    Friend WithEvents chkDni As System.Windows.Forms.CheckBox
 End Class

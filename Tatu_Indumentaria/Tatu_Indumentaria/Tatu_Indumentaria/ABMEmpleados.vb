@@ -723,4 +723,20 @@ Public Class ABMEmpleados
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
         Call LimpiarForms()
     End Sub
+
+    Private Sub chkDni_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDni.CheckedChanged
+        If chkDni.Checked Then
+            chkNombre.Checked = False
+        Else
+            chkDni.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombre.CheckedChanged
+        If chkNombre.Checked Then
+            chkDni.Checked = False
+        Else
+            chkNombre.Checked = False
+        End If
+    End Sub
 End Class

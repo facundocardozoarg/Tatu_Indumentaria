@@ -9,6 +9,7 @@ Public Class ABMClientes
     Public id_provincia As Integer
     Public id_pais As Integer
     Public estado As Integer
+    Public bandera As Boolean = False
 
     Public id_cliente As Integer
 
@@ -61,7 +62,7 @@ Public Class ABMClientes
 
 
 
-    Sub CargarList()
+    Sub CargarList(ByVal dato As String)
         Try
             'Ejecuto la coneccion a la BD
             Conexion.Open()
@@ -75,8 +76,20 @@ Public Class ABMClientes
             'Indicuto el tipo de instruccion
             comando.CommandType = CommandType.Text
 
-            'Sql muestro nombre de cliente filtro por estado activo y los ordeno.
-            comando.CommandText = "select nombre,apellido from cliente where estado = '" & 1 & "' order by CONCAT(nombre, ' ', apellido)"
+            If dato = "" Then
+                'Sql muestro nombre de cliente filtro por estado activo y los ordeno.
+                comando.CommandText = "select nombre,apellido from cliente where estado = '" & 1 & "' order by CONCAT(nombre, ' ', apellido);"
+
+            ElseIf dato <> "" And chkDni.Checked Then
+                comando.CommandText = "select nombre,apellido from cliente where estado = '" & 1 & "' and dni like '" & dato & "%' order by CONCAT(nombre, ' ', apellido);"
+
+            ElseIf dato <> "" And chkNombre.Checked Then
+                comando.CommandText = "select nombre,apellido from cliente where estado = '" & 1 & "' and nombre like '" & dato & "%' order by CONCAT(nombre, ' ', apellido);"
+
+            Else
+                Conexion.Close()
+                Exit Sub
+            End If
 
             'Declaro Objeto DataReader
             Dim drCliente As MySqlDataReader
@@ -108,128 +121,6 @@ Public Class ABMClientes
 
     End Sub
 
-    Sub CargarCampos(ByVal orden As String)
-        'si el parametro está vacío no hago nada
-        If orden = "" Then
-            Exit Sub
-        End If
-
-        Try
-            Conexion.Open()
-
-            Dim Comando As New MySqlCommand
-            Comando.Connection = Conexion
-            Comando.CommandType = CommandType.Text
-
-            'Busco coincidencias en nombre o apellido (no solo nombre)
-            Comando.CommandText = "select * from cliente where concat(nombre, ' ', apellido) like'" & orden.ToString & "%' order by nombre;"
-
-            Dim drCliente As MySqlDataReader
-            drCliente = Comando.ExecuteReader
-
-            If drCliente.HasRows Then
-                drCliente.Read()
-
-                txtIdCliente.Text = drCliente("id_cliente")
-                txtDniCliente.Text = drCliente("dni")
-                txtNombreCliente.Text = drCliente("nombre")
-                txtApellidoCliente.Text = drCliente("apellido")
-                txtDireccion.Text = drCliente("direccion")
-                txtTelefono.Text = drCliente("telefono")
-                txtCorreo.Text = drCliente("email")
-                cmbGenero.SelectedItem = drCliente("genero")
-
-                id_ciudad = drCliente("id_ciudad")
-
-                If Not IsDBNull(drCliente("fecha_nacimiento")) Then
-                    dtpFechaNac.Value = drCliente("fecha_nacimiento")
-                Else
-                    dtpFechaNac.Value = Now
-                End If
-
-                drCliente.Close()
-
-                Comando.Parameters.Clear()
-
-                Comando.CommandText = "select * from ciudad where id_ciudad = @id_ciudad;"
-                Comando.Parameters.AddWithValue("@id_ciudad", id_ciudad)
-
-                'Declaro obejto data reade
-                Dim drCiudad As MySqlDataReader
-
-                'Traigo datos desde BD
-                drCiudad = Comando.ExecuteReader()
-
-
-                'Si encontre coincidencias
-                If drCiudad.HasRows Then
-                    drCiudad.Read()
-                    id_provincia = drCiudad("id_provincia")
-                    CiudadElegida = drCiudad("nombre_ciudad")
-                End If
-                drCiudad.Close()
-
-
-                Comando.Parameters.Clear()
-
-                Comando.CommandText = "select * from provincia where id_provincia = @id_provincia;"
-                Comando.Parameters.AddWithValue("@id_provincia", id_provincia)
-
-                'Declaro obejto data reade
-                Dim drProvincia As MySqlDataReader
-
-                'Traigo datos desde BD
-                drProvincia = Comando.ExecuteReader()
-
-
-                'Si encontre coincidencias
-                If drProvincia.HasRows Then
-                    drProvincia.Read()
-                    id_pais = drProvincia("id_pais")
-                    ProvinciaElegida = drProvincia("nombre_provincia")
-                End If
-                drProvincia.Close()
-
-
-                Comando.Parameters.Clear()
-
-                Comando.CommandText = "select nombre_pais from pais where id_pais = @id_pais;"
-                Comando.Parameters.AddWithValue("@id_pais", id_pais)
-
-                'Declaro obejto data reade
-                Dim drPais As MySqlDataReader
-
-                'Traigo datos desde BD
-                drPais = Comando.ExecuteReader()
-
-
-                'Si encontre coincidencias
-                If drPais.HasRows Then
-                    drPais.Read()
-                    PaisElegido = drPais("nombre_pais")
-                End If
-                drProvincia.Close()
-
-            Else
-                MsgBox("No se encontraron clientes con ese nombre o apellido.", MsgBoxStyle.Information, "Buscar")
-            End If
-
-            drCliente.Close()
-            'Cierro conexion
-            Conexion.Close()
-
-            cmbPais.Items.Clear()
-
-            cmbPais.Items.Add(PaisElegido)
-            cmbPais.SelectedItem = (PaisElegido)
-            cmbProvincia.SelectedItem = (ProvinciaElegida).ToString
-            cmbCiudad.SelectedItem = (CiudadElegida).ToString
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Conexion.Close()
-        End Try
-    End Sub
 
     Sub CargarPaises()
         Try
@@ -384,7 +275,7 @@ Public Class ABMClientes
 
     Private Sub Clientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call Conectar()
-        Call CargarList()
+        Call CargarList(txtBusqueda.Text.ToString)
         Call DeshabilitarCampos()
         cmbGenero.SelectedIndex = -1
         cmbGenero.Items.Add("Masculino")
@@ -394,6 +285,7 @@ Public Class ABMClientes
             btnInactivo.Visible = False
         End If
 
+   
     End Sub
 
     Private Sub cmbPais_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPais.SelectedIndexChanged
@@ -430,6 +322,9 @@ Public Class ABMClientes
     End Sub
 
     Private Sub lstClientes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstClientes.SelectedIndexChanged
+        chkDni.Checked = False
+        chkNombre.Checked = False
+
         Call DeshabilitarCampos()
         'Evito un error al hacer click donde no tenga items el list.
         If lstClientes.SelectedItem Is Nothing Then
@@ -546,11 +441,12 @@ Public Class ABMClientes
                     drPais.Read()
                     PaisElegido = drPais("nombre_pais")
                 End If
-                drProvincia.Close()
+                drPais.Close()
 
 
             Else
                 Call LimpiarForms()
+                drCliente.Close()
             End If
             'Cierro conexion
             Conexion.Close()
@@ -562,7 +458,7 @@ Public Class ABMClientes
             cmbPais.SelectedItem = (PaisElegido)
             cmbProvincia.SelectedItem = (ProvinciaElegida).ToString
             cmbCiudad.SelectedItem = (CiudadElegida).ToString
-
+            Call CargarList(txtBusqueda.Text)
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -643,7 +539,7 @@ Public Class ABMClientes
             lstClientes.Items.Clear()
 
             'Actualizo listbox
-            Call CargarList()
+            Call CargarList(txtBusqueda.Text.ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -729,7 +625,7 @@ Public Class ABMClientes
             End If
 
 
-            Call CargarList()
+            Call CargarList(txtBusqueda.Text.ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -777,6 +673,7 @@ Public Class ABMClientes
 
                 If estado Then
                     MsgBox("El cliente ya existe, no se puede volver a agregar", MsgBoxStyle.Information, "Agregar")
+
                 ElseIf Not estado Then
                     If MsgBox("El cliente ya fue cargado antes, ¿desea activarlo?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question, "Agregar") = MsgBoxResult.Yes Then
                         ' Acción simple si responde Sí
@@ -792,6 +689,7 @@ Public Class ABMClientes
 
                     comando.ExecuteNonQuery()
                 End If
+                drCliente.Close()
             Else
                 'cierro el data reader
                 drCliente.Close()
@@ -827,7 +725,7 @@ Public Class ABMClientes
             'Cierro conexion.
             Conexion.Close()
 
-            Call CargarList()
+            Call CargarList(txtBusqueda.Text.ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -848,14 +746,31 @@ Public Class ABMClientes
         Call LimpiarForms()
     End Sub
 
-    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-        Dim textoBusqueda As String = txtBusqueda.Text.Trim()
 
-        If textoBusqueda = "" Then
-            MsgBox("Ingrese un nombre o apellido para buscar.", MsgBoxStyle.Exclamation, "Buscar")
-            Exit Sub
+
+    Private Sub chkDni_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDni.CheckedChanged
+        Call LimpiarForms()
+        If chkDni.Checked Then
+            chkNombre.Checked = False
+        Else
+            chkDni.Checked = False
         End If
 
-        Call CargarCampos(txtBusqueda.Text)
+    End Sub
+
+    Private Sub chkNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombre.CheckedChanged
+        Call LimpiarForms()
+        If chkNombre.Checked Then
+            chkDni.Checked = False
+        Else
+            chkNombre.Checked = False
+        End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBusqueda.TextChanged
+            If chkDni.Checked = False And chkNombre.Checked = False Then
+                Exit Sub
+            End If
+            Call CargarList(txtBusqueda.Text.ToString)
     End Sub
 End Class
