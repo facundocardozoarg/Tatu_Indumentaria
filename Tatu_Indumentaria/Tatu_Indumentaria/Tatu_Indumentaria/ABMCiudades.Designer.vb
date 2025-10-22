@@ -48,7 +48,7 @@ Partial Class ABMCiudades
         Me.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProvincia.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbProvincia.FormattingEnabled = True
-        Me.cmbProvincia.Location = New System.Drawing.Point(198, 333)
+        Me.cmbProvincia.Location = New System.Drawing.Point(198, 315)
         Me.cmbProvincia.Name = "cmbProvincia"
         Me.cmbProvincia.Size = New System.Drawing.Size(148, 25)
         Me.cmbProvincia.TabIndex = 3
@@ -57,7 +57,7 @@ Partial Class ABMCiudades
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(195, 304)
+        Me.Label12.Location = New System.Drawing.Point(195, 285)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 19)
         Me.Label12.TabIndex = 166
@@ -67,7 +67,7 @@ Partial Class ABMCiudades
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(195, 232)
+        Me.Label4.Location = New System.Drawing.Point(195, 205)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(96, 19)
         Me.Label4.TabIndex = 165
@@ -77,7 +77,7 @@ Partial Class ABMCiudades
         '
         Me.txtCodigoPostal.BackColor = System.Drawing.Color.SeaShell
         Me.txtCodigoPostal.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.txtCodigoPostal.Location = New System.Drawing.Point(198, 261)
+        Me.txtCodigoPostal.Location = New System.Drawing.Point(198, 235)
         Me.txtCodigoPostal.MaxLength = 50
         Me.txtCodigoPostal.Name = "txtCodigoPostal"
         Me.txtCodigoPostal.Size = New System.Drawing.Size(148, 25)
@@ -87,7 +87,7 @@ Partial Class ABMCiudades
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(195, 152)
+        Me.Label3.Location = New System.Drawing.Point(195, 125)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 19)
         Me.Label3.TabIndex = 163
@@ -97,7 +97,7 @@ Partial Class ABMCiudades
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(195, 48)
+        Me.Label2.Location = New System.Drawing.Point(195, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 19)
         Me.Label2.TabIndex = 162
@@ -129,7 +129,7 @@ Partial Class ABMCiudades
         Me.txtIdCiudad.BackColor = System.Drawing.Color.SeaShell
         Me.txtIdCiudad.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.txtIdCiudad.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtIdCiudad.Location = New System.Drawing.Point(198, 88)
+        Me.txtIdCiudad.Location = New System.Drawing.Point(195, 70)
         Me.txtIdCiudad.Name = "txtIdCiudad"
         Me.txtIdCiudad.ReadOnly = True
         Me.txtIdCiudad.Size = New System.Drawing.Size(29, 25)
@@ -139,7 +139,7 @@ Partial Class ABMCiudades
         '
         Me.txtNombreCiudad.BackColor = System.Drawing.Color.SeaShell
         Me.txtNombreCiudad.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.txtNombreCiudad.Location = New System.Drawing.Point(198, 182)
+        Me.txtNombreCiudad.Location = New System.Drawing.Point(195, 155)
         Me.txtNombreCiudad.MaxLength = 50
         Me.txtNombreCiudad.Name = "txtNombreCiudad"
         Me.txtNombreCiudad.Size = New System.Drawing.Size(148, 25)
@@ -150,9 +150,9 @@ Partial Class ABMCiudades
         Me.btnEditar.BackColor = System.Drawing.Color.LightCyan
         Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(395, 134)
+        Me.btnEditar.Location = New System.Drawing.Point(395, 135)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(120, 49)
+        Me.btnEditar.Size = New System.Drawing.Size(120, 45)
         Me.btnEditar.TabIndex = 6
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -163,9 +163,9 @@ Partial Class ABMCiudades
         Me.btnVolver.BackColor = System.Drawing.Color.LightCyan
         Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
-        Me.btnVolver.Location = New System.Drawing.Point(395, 371)
+        Me.btnVolver.Location = New System.Drawing.Point(395, 400)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(120, 49)
+        Me.btnVolver.Size = New System.Drawing.Size(120, 45)
         Me.btnVolver.TabIndex = 10
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -176,9 +176,9 @@ Partial Class ABMCiudades
         Me.btnModificar.BackColor = System.Drawing.Color.LightCyan
         Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(395, 189)
+        Me.btnModificar.Location = New System.Drawing.Point(395, 190)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(120, 49)
+        Me.btnModificar.Size = New System.Drawing.Size(120, 45)
         Me.btnModificar.TabIndex = 7
         Me.btnModificar.Text = "Guardar"
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -189,9 +189,9 @@ Partial Class ABMCiudades
         Me.btnNuevo.BackColor = System.Drawing.Color.LightCyan
         Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.Location = New System.Drawing.Point(395, 24)
+        Me.btnNuevo.Location = New System.Drawing.Point(395, 25)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(120, 49)
+        Me.btnNuevo.Size = New System.Drawing.Size(120, 45)
         Me.btnNuevo.TabIndex = 4
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -202,9 +202,9 @@ Partial Class ABMCiudades
         Me.btnEliminar.BackColor = System.Drawing.Color.LightCyan
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(395, 249)
+        Me.btnEliminar.Location = New System.Drawing.Point(395, 245)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(120, 49)
+        Me.btnEliminar.Size = New System.Drawing.Size(120, 45)
         Me.btnEliminar.TabIndex = 8
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -215,9 +215,9 @@ Partial Class ABMCiudades
         Me.btnBorrar.BackColor = System.Drawing.Color.LightCyan
         Me.btnBorrar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnBorrar.Image = CType(resources.GetObject("btnBorrar.Image"), System.Drawing.Image)
-        Me.btnBorrar.Location = New System.Drawing.Point(395, 304)
+        Me.btnBorrar.Location = New System.Drawing.Point(395, 300)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(120, 49)
+        Me.btnBorrar.Size = New System.Drawing.Size(120, 45)
         Me.btnBorrar.TabIndex = 9
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -228,9 +228,9 @@ Partial Class ABMCiudades
         Me.btnAgregar.BackColor = System.Drawing.Color.LightCyan
         Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), System.Drawing.Image)
-        Me.btnAgregar.Location = New System.Drawing.Point(395, 79)
+        Me.btnAgregar.Location = New System.Drawing.Point(395, 80)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(120, 49)
+        Me.btnAgregar.Size = New System.Drawing.Size(120, 45)
         Me.btnAgregar.TabIndex = 5
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -241,7 +241,7 @@ Partial Class ABMCiudades
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(536, 420)
+        Me.ClientSize = New System.Drawing.Size(530, 465)
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnModificar)

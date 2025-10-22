@@ -101,8 +101,9 @@ Partial Class Login
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.Color.Red
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(451, 1)
+        Me.btnSalir.Location = New System.Drawing.Point(454, -1)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.btnSalir.Size = New System.Drawing.Size(39, 39)

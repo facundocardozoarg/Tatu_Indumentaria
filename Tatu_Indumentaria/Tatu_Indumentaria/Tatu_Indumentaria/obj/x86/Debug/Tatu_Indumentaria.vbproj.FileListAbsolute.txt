@@ -97,3 +97,34 @@ C:\Users\Acer\Desktop\tatu_indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\
 C:\Users\Acer\Desktop\tatu_indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMMediosPagos.resources
 C:\Users\Acer\Desktop\tatu_indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.MenuEnvios.resources
 C:\Users\Acer\Desktop\tatu_indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.MenuVenta.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.exe
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.xml
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.pdb
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\bin\Debug\Tatu_Indumentaria.exe
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\bin\Debug\Tatu_Indumentaria.pdb
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\bin\Debug\Tatu_Indumentaria.xml
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMCategorias.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMCiudades.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMClientes.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMColor.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMEmpleados.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMEmpresaEnvios.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMGestionEnvio.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMMarcas.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMMediosPagos.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMModelo.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMPaises.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMProveedores.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMProvincias.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMTalle.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.frmGrillaEmpleados.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.frmGrillaProveedores.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Localidades.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Login.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.MenuEnvios.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.MenuVenta.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Resources.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.PantallaPrincipal.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Productos.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Stock.resources
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.vbproj.GenerateResource.Cache

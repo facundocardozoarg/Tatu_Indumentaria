@@ -218,7 +218,7 @@ Partial Class ABMProvincias
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(536, 420)
+        Me.ClientSize = New System.Drawing.Size(530, 465)
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnModificar)

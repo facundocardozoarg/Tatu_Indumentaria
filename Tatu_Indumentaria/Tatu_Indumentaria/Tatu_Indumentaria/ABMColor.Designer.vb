@@ -102,11 +102,11 @@ Partial Class ABMColor
         'btnVolver
         '
         Me.btnVolver.BackColor = System.Drawing.Color.LightCyan
-        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
-        Me.btnVolver.Location = New System.Drawing.Point(395, 371)
+        Me.btnVolver.Location = New System.Drawing.Point(395, 400)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(120, 49)
+        Me.btnVolver.Size = New System.Drawing.Size(120, 45)
         Me.btnVolver.TabIndex = 8
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -115,11 +115,11 @@ Partial Class ABMColor
         'btnModificar
         '
         Me.btnModificar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(395, 189)
+        Me.btnModificar.Location = New System.Drawing.Point(395, 190)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(120, 49)
+        Me.btnModificar.Size = New System.Drawing.Size(120, 45)
         Me.btnModificar.TabIndex = 5
         Me.btnModificar.Text = "Guardar"
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -128,11 +128,11 @@ Partial Class ABMColor
         'btnNuevo
         '
         Me.btnNuevo.BackColor = System.Drawing.Color.LightCyan
-        Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.Location = New System.Drawing.Point(395, 24)
+        Me.btnNuevo.Location = New System.Drawing.Point(395, 25)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(120, 49)
+        Me.btnNuevo.Size = New System.Drawing.Size(120, 45)
         Me.btnNuevo.TabIndex = 2
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -141,11 +141,11 @@ Partial Class ABMColor
         'btnEliminar
         '
         Me.btnEliminar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(395, 249)
+        Me.btnEliminar.Location = New System.Drawing.Point(395, 245)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(120, 49)
+        Me.btnEliminar.Size = New System.Drawing.Size(120, 45)
         Me.btnEliminar.TabIndex = 6
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -154,11 +154,11 @@ Partial Class ABMColor
         'btnBorrar
         '
         Me.btnBorrar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBorrar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnBorrar.Image = CType(resources.GetObject("btnBorrar.Image"), System.Drawing.Image)
-        Me.btnBorrar.Location = New System.Drawing.Point(395, 304)
+        Me.btnBorrar.Location = New System.Drawing.Point(395, 300)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(120, 49)
+        Me.btnBorrar.Size = New System.Drawing.Size(120, 45)
         Me.btnBorrar.TabIndex = 7
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -167,11 +167,11 @@ Partial Class ABMColor
         'btnEditar
         '
         Me.btnEditar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(395, 134)
+        Me.btnEditar.Location = New System.Drawing.Point(395, 135)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(120, 49)
+        Me.btnEditar.Size = New System.Drawing.Size(120, 45)
         Me.btnEditar.TabIndex = 4
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -180,11 +180,11 @@ Partial Class ABMColor
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), System.Drawing.Image)
-        Me.btnAgregar.Location = New System.Drawing.Point(395, 79)
+        Me.btnAgregar.Location = New System.Drawing.Point(395, 80)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(120, 49)
+        Me.btnAgregar.Size = New System.Drawing.Size(120, 45)
         Me.btnAgregar.TabIndex = 3
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -195,7 +195,7 @@ Partial Class ABMColor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(536, 420)
+        Me.ClientSize = New System.Drawing.Size(530, 470)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)

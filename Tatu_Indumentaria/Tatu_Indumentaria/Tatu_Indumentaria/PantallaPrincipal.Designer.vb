@@ -153,7 +153,7 @@ Partial Class PantallaPrincipal
         'btnProveedores
         '
         Me.btnProveedores.BackColor = System.Drawing.Color.LightCyan
-        Me.btnProveedores.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnProveedores.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnProveedores.Image = CType(resources.GetObject("btnProveedores.Image"), System.Drawing.Image)
         Me.btnProveedores.Location = New System.Drawing.Point(12, 404)
         Me.btnProveedores.Name = "btnProveedores"
@@ -289,7 +289,7 @@ Partial Class PantallaPrincipal
         'btnEmpleados
         '
         Me.btnEmpleados.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEmpleados.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnEmpleados.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEmpleados.Image = CType(resources.GetObject("btnEmpleados.Image"), System.Drawing.Image)
         Me.btnEmpleados.Location = New System.Drawing.Point(12, 184)
         Me.btnEmpleados.Name = "btnEmpleados"
@@ -302,7 +302,7 @@ Partial Class PantallaPrincipal
         'btnEnvios
         '
         Me.btnEnvios.BackColor = System.Drawing.Color.LightCyan
-        Me.btnEnvios.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnEnvios.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEnvios.Image = CType(resources.GetObject("btnEnvios.Image"), System.Drawing.Image)
         Me.btnEnvios.Location = New System.Drawing.Point(12, 239)
         Me.btnEnvios.Name = "btnEnvios"
@@ -315,7 +315,7 @@ Partial Class PantallaPrincipal
         'btnClientes
         '
         Me.btnClientes.BackColor = System.Drawing.Color.LightCyan
-        Me.btnClientes.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnClientes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
         Me.btnClientes.Location = New System.Drawing.Point(12, 67)
         Me.btnClientes.Name = "btnClientes"
@@ -328,7 +328,7 @@ Partial Class PantallaPrincipal
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.LightCyan
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.Location = New System.Drawing.Point(12, 129)
         Me.Button5.Name = "Button5"
@@ -341,7 +341,7 @@ Partial Class PantallaPrincipal
         'btnLocalidades
         '
         Me.btnLocalidades.BackColor = System.Drawing.Color.LightCyan
-        Me.btnLocalidades.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnLocalidades.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnLocalidades.Image = CType(resources.GetObject("btnLocalidades.Image"), System.Drawing.Image)
         Me.btnLocalidades.Location = New System.Drawing.Point(11, 294)
         Me.btnLocalidades.Name = "btnLocalidades"
@@ -354,7 +354,7 @@ Partial Class PantallaPrincipal
         'btnVentas
         '
         Me.btnVentas.BackColor = System.Drawing.Color.LightCyan
-        Me.btnVentas.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnVentas.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnVentas.Image = CType(resources.GetObject("btnVentas.Image"), System.Drawing.Image)
         Me.btnVentas.Location = New System.Drawing.Point(12, 459)
         Me.btnVentas.Name = "btnVentas"
@@ -367,7 +367,7 @@ Partial Class PantallaPrincipal
         'btnProductos
         '
         Me.btnProductos.BackColor = System.Drawing.Color.LightCyan
-        Me.btnProductos.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnProductos.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
         Me.btnProductos.Location = New System.Drawing.Point(12, 349)
         Me.btnProductos.Name = "btnProductos"
