@@ -465,7 +465,7 @@ Public Class ABMClientes
         End Try
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click, btnImprimir.Click
         Me.Close()
         PantallaPrincipal.Show()
     End Sub

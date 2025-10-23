@@ -61,6 +61,7 @@ Partial Class ABMClientes
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.chkNombre = New System.Windows.Forms.CheckBox()
         Me.chkDni = New System.Windows.Forms.CheckBox()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label3
@@ -470,6 +471,19 @@ Partial Class ABMClientes
         Me.chkDni.Text = "DNI"
         Me.chkDni.UseVisualStyleBackColor = True
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackColor = System.Drawing.Color.LightCyan
+        Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
+        Me.btnImprimir.Location = New System.Drawing.Point(351, 495)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(120, 45)
+        Me.btnImprimir.TabIndex = 18
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnImprimir.UseVisualStyleBackColor = False
+        '
         'ABMClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -479,6 +493,7 @@ Partial Class ABMClientes
         Me.Controls.Add(Me.chkDni)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtBusqueda)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dtpFechaNac)
         Me.Controls.Add(Me.Label14)
@@ -560,4 +575,5 @@ Partial Class ABMClientes
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents chkNombre As System.Windows.Forms.CheckBox
     Friend WithEvents chkDni As System.Windows.Forms.CheckBox
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
 End Class
