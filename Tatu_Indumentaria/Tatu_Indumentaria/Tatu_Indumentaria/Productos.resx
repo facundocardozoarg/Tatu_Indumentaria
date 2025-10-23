@@ -336,6 +336,8 @@
         c9p/k+C6/ypWEajJVNsJkUyJBSIKBieCmo79A8UFLJxBGQ0UsbD4iey7CaZRMhoJgFdcxeyesLzBfUFp
         rU1yBp4vw7su/wMZ6Fm8/pOYstkNPnHFlaKKxo/5xBQXoGsmFrAyMDCwQdmaOi4Zv0CFnaiSCaigY4KK
         cyOppwxIqdkuF1UyWSMoq5mNLgcDAGpvXeP6LwmbAAAAAElFTkSuQmCC
+<<<<<<< HEAD
+=======
 </value>
   </data>
   <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -403,6 +405,7 @@
         lgWXyrQe/0lEF3a8D7DwskAQbSZoPNgFhUJE4DmoCLbIhsqbO20xs7Gq2qLFDAkgM0G5HmQ5AjKbg9Z7
         l2sVr1kiOr8DT7+xHSQMjQe7QGHcVopRZvXRXcJPnHnLk+UVL+NNphYiitLj7BlAEwjz3A0xQvH//7aY
         pk9EqJ8tRmMPEdUSkar3065/mFO+KVZWdEMAAAAASUVORK5CYII=
+>>>>>>> 373277c250345c321872b4a2381e4718c25375ed
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
