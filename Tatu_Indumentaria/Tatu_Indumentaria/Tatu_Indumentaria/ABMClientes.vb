@@ -523,7 +523,7 @@ Public Class ABMClientes
                     respuesta = comando.ExecuteNonQuery
 
                     'Imprimo mensaje.
-                    MsgBox("El cliente ha sido eliminado exitosamente", MsgBoxStyle.Information, "Eliminar")
+                    MsgBox("El cliente ha sido eliminado exitosamente", MsgBoxStyle.Information, "Inactivar")
                     Call LimpiarForms()
                 End If
 

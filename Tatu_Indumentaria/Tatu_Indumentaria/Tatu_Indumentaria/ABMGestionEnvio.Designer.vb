@@ -326,7 +326,7 @@ Partial Class ABMGestionEnvio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(616, 458)
         Me.Controls.Add(Me.cmbEmpresa)
         Me.Controls.Add(Me.Label5)
