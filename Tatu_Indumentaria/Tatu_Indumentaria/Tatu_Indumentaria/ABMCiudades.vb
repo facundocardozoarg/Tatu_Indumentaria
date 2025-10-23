@@ -161,6 +161,7 @@ Public Class ABMCiudades
                 txtCodigoPostal.Text = drCiudad("codigo_postal")
 
 
+
                 id_provincia = drCiudad("id_provincia") 'guardo el id 
 
                 'cierro el data reader

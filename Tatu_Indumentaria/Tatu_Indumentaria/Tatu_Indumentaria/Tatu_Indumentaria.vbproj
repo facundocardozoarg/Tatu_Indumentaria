@@ -118,6 +118,12 @@
     <Compile Include="ABMGestionEnvio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABMImagenes.Designer.vb">
+      <DependentUpon>ABMImagenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMImagenes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABMMarcas.Designer.vb">
       <DependentUpon>ABMMarcas.vb</DependentUpon>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMGestionEnvio.resx">
       <DependentUpon>ABMGestionEnvio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMImagenes.resx">
+      <DependentUpon>ABMImagenes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMMarcas.resx">
       <DependentUpon>ABMMarcas.vb</DependentUpon>

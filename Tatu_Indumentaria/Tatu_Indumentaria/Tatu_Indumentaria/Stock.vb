@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class Stock
 
@@ -23,6 +24,57 @@ Public Class Stock
         cmbColor.SelectedIndex = -1
         cmbTalle.SelectedIndex = -1
 
+    End Sub
+
+    Sub BuscarImagenBD(ByVal id_color As Integer, ByVal idProd As Integer)
+
+        If txtCodigo.Text = "" Or cmbColor.SelectedIndex < 0 Then
+            Exit Sub
+        End If
+
+        Try
+            'conecto a BD
+            Conexion.Open()
+
+            'declaro el objeto command para enviar sentencias a la BD
+            Dim Comando As New MySqlCommand
+
+            'indico objeto de conexion
+            Comando.Connection = Conexion
+
+            'indico tipos de instruccion de la BD
+            Comando.CommandType = CommandType.Text
+
+            'cargo instrucccion para la BD
+            Comando.CommandText = "select * from imagen where id_color = " & id_color & " and id_producto = " & idProd & ";"
+
+            'obtengo los datos y los devuelvo a un objeto DataReader
+            Dim DReader As MySqlDataReader
+
+            'el mÃ©todo ExecuteReader trae los datos de la BD
+            DReader = Comando.ExecuteReader
+            ptbImagen.Image = Nothing
+
+            'consulto si trajo registros
+            If DReader.HasRows Then
+                DReader.Read()
+                'traigo la imagen binaria y la convierto
+                '*************************************
+                Dim lb() As Byte = DReader("imagen_url")
+                Dim lstr As New System.IO.MemoryStream(lb)
+                'cargo la imagen en el picture
+                ptbImagen.Image = Image.FromStream(lstr)
+                ptbImagen.SizeMode = PictureBoxSizeMode.StretchImage
+                lstr.Close()
+            End If
+
+            DReader.Close()
+            Conexion.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Conexion.Close()
+        End Try
     End Sub
 
 
@@ -185,6 +237,7 @@ Public Class Stock
             Exit Sub
         End If
 
+        ptbImagen.Image = Nothing
         Try
 
             'Si no tengo errores...
@@ -364,6 +417,47 @@ Public Class Stock
         End If
 
         nombre_color = cmbColor.SelectedItem.ToString
+
+        Dim id_color As Integer
+
+        Try
+            Conexion.Open()
+
+            Dim comando As New MySqlCommand
+
+            'Indico conexion activa
+            comando.Connection = Conexion
+
+            'Indico tipo de instruccion
+            comando.CommandType = CommandType.Text
+
+            'Cargo el sql buscando igualdades con items del list
+            comando.CommandText = "select id_color from color where nombre_color = '" & cmbColor.SelectedItem.ToString & "';"
+
+
+            Dim drColor As MySqlDataReader
+
+            drColor = comando.ExecuteReader()
+
+            If drColor.HasRows() Then
+                drColor.Read()
+              
+                id_color = drColor("id_color")
+                drColor.Close()
+            End If
+
+            drColor.Close()
+            Conexion.Close()
+            Call BuscarImagenBD(id_color, id_producto)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Conexion.Close()
+        End Try
+
+
+
+
+
     End Sub
 
     Private Sub cmbTalle_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbTalle.SelectedIndexChanged

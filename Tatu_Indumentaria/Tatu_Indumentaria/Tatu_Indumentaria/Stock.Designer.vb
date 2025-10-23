@@ -51,6 +51,8 @@ Partial Class Stock
         Me.txtCategoria = New System.Windows.Forms.TextBox()
         Me.txtMarca = New System.Windows.Forms.TextBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
+        Me.ptbImagen = New System.Windows.Forms.PictureBox()
+        CType(Me.ptbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -329,11 +331,21 @@ Partial Class Stock
         Me.txtModelo.Size = New System.Drawing.Size(197, 25)
         Me.txtModelo.TabIndex = 21
         '
+        'ptbImagen
+        '
+        Me.ptbImagen.Location = New System.Drawing.Point(364, 390)
+        Me.ptbImagen.Name = "ptbImagen"
+        Me.ptbImagen.Size = New System.Drawing.Size(194, 212)
+        Me.ptbImagen.TabIndex = 22
+        Me.ptbImagen.TabStop = False
+        '
         'Stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(573, 675)
+        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.ClientSize = New System.Drawing.Size(646, 740)
+        Me.Controls.Add(Me.ptbImagen)
         Me.Controls.Add(Me.txtModelo)
         Me.Controls.Add(Me.txtMarca)
         Me.Controls.Add(Me.txtCategoria)
@@ -368,6 +380,7 @@ Partial Class Stock
         Me.Name = "Stock"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock"
+        CType(Me.ptbImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -400,4 +413,5 @@ Partial Class Stock
     Friend WithEvents txtCategoria As System.Windows.Forms.TextBox
     Friend WithEvents txtMarca As System.Windows.Forms.TextBox
     Friend WithEvents txtModelo As System.Windows.Forms.TextBox
+    Friend WithEvents ptbImagen As System.Windows.Forms.PictureBox
 End Class
