@@ -11,7 +11,7 @@ Public Class Productos
 
 
 
-    Sub LimpiarCampos()
+    Sub LimpiarForms()
         txtCodigo.Text = ""
         txtDescipcion.Text = ""
         cmbGenero.SelectedIndex = -1
@@ -19,8 +19,70 @@ Public Class Productos
         cmbCategoria.SelectedIndex = -1
         cmbMarca.SelectedIndex = -1
         cmbModelo.SelectedIndex = -1
+    End Sub
+
+
+
+    Sub HabilitarCampos()
+        txtCodigo.ReadOnly = False
+        txtDescipcion.ReadOnly = False
+        cmbGenero.Enabled = True
+        cmbTemporada.Enabled = True
+        cmbCategoria.Enabled = True
+        cmbMarca.Enabled = True
+        cmbModelo.Enabled = True
 
     End Sub
+
+
+    Sub CargarList()
+        Try
+            'Ejecuto la coneccion a la BD
+            Conexion.Open()
+
+            'Declaro obejto comand
+            Dim comando As New MySqlCommand
+
+            'Configuro la conexion activa.
+            comando.Connection = Conexion
+
+            'Indicuto el tipo de instruccion
+            comando.CommandType = CommandType.Text
+
+            'Sql muestro nombre de categoria y los ordeno.
+            comando.CommandText = "select codigo_producto from producto order by codigo_producto"
+
+            lstProductos.Items.Clear()
+
+            'Declaro Objeto DataReader
+            Dim drCodigos As MySqlDataReader
+
+            'Traigo datos desde BD
+            drCodigos = comando.ExecuteReader
+
+            'Verifico que haya registros
+            If drCodigos.HasRows Then
+                'si encuentra registros limpio el list.
+
+
+                'Recorro el data reader
+                Do While drCodigos.Read
+                    'Agrego los nombres de categoria a los item del list
+                    lstProductos.Items.Add(drCodigos("codigo_producto"))
+                Loop
+            End If
+            'Cierro Data reader
+            drCodigos.Close()
+
+            'Cierro Conexion
+            Conexion.Close()
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
 
 
     Sub CargarCategorias()
@@ -161,6 +223,226 @@ Public Class Productos
     End Sub
 
 
+    Private Sub btnCategorias_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCategorias.Click
+        Me.Close()
+        'Dim formCategorias As New ABMCategorias()
+        ' formCategorias.ShowDialog()
+        ABMCategorias.Show()
+    End Sub
+
+
+    Private Sub btnColor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnColor.Click
+        Me.Close()
+        ABMColor.Show()
+    End Sub
+
+
+    Private Sub btnModelos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModelos.Click
+        Me.Close()
+        ABMModelo.Show()
+    End Sub
+
+  
+
+    Private Sub btnMarca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMarca.Click
+        Me.Close()
+        ABMMarcas.Show()
+    End Sub
+
+    Private Sub Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Call CargarModelos()
+        Call CargarCategorias()
+        Call CargarMarcas()
+        Call CargarList()
+        Call LimpiarForms()
+        cmbGenero.Items.Add("Hombre")
+        cmbGenero.Items.Add("Mujer")
+        cmbTemporada.Items.Add("Primavera - Verano")
+        cmbTemporada.Items.Add("Otoño - Invierno")
+        Call Conectar()
+    End Sub
+
+    Private Sub cmbCategoria_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCategoria.SelectedIndexChanged
+
+        If lstProductos.SelectedIndex > -1 Then
+            Exit Sub
+        End If
+
+
+        If cmbCategoria.SelectedIndex >= 0 Then
+
+
+            categoriaElegida = cmbCategoria.SelectedItem.ToString
+
+            Try
+                'Abro conexion
+                Conexion.Open()
+
+                'declaro objeto comando
+                Dim comando As New MySqlCommand
+
+                'Indico conexion activa.
+                comando.Connection = Conexion
+
+                'Indico tipo de instruccion
+                comando.CommandType = CommandType.Text
+
+                'Cargo instruccion sql
+                comando.CommandText = "select id_categoria from categoria where nombre_categoria = @nombre_categoria;"
+
+                comando.Parameters.AddWithValue("@nombre_categoria", categoriaElegida)
+
+                Dim drCategoria As MySqlDataReader
+
+                'Traigo datos de la BD
+                drCategoria = comando.ExecuteReader
+
+                If drCategoria.Read() Then
+                    id_Categoria = drCategoria("id_categoria")
+                End If
+
+
+                drCategoria.Close()
+                Conexion.Close()
+
+
+            Catch ex As Exception
+                'Imprimo mensaje en caso de error
+                MsgBox(ex.Message)
+                Conexion.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub cmbMarca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMarca.SelectedIndexChanged
+        If lstProductos.SelectedIndex > -1 Then
+            Exit Sub
+        End If
+
+
+
+        If cmbMarca.SelectedIndex >= 0 Then
+
+
+            marcaElegida = cmbMarca.SelectedItem.ToString
+
+            Try
+                'Abro conexion
+                Conexion.Open()
+
+                'declaro objeto comando
+                Dim comando As New MySqlCommand
+
+                'Indico conexion activa.
+                comando.Connection = Conexion
+
+                'Indico tipo de instruccion
+                comando.CommandType = CommandType.Text
+
+                'Cargo instruccion sql
+                comando.CommandText = "select id_marca from marca where nombre_marca = @nombre_marca;"
+
+                comando.Parameters.AddWithValue("@nombre_marca", marcaElegida)
+
+                Dim drMarca As MySqlDataReader
+
+                'Traigo datos de la BD
+                drMarca = comando.ExecuteReader
+
+                If drMarca.Read() Then
+                    id_marca = drMarca("id_marca")
+                End If
+
+
+                drMarca.Close()
+                Conexion.Close()
+
+
+            Catch ex As Exception
+                'Imprimo mensaje en caso de error
+                MsgBox(ex.Message)
+                Conexion.Close()
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub cmbModelo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbModelo.SelectedIndexChanged
+        If lstProductos.SelectedIndex > -1 Then
+            Exit Sub
+        End If
+
+
+
+        If cmbMarca.SelectedIndex >= 0 Then
+
+
+            modeloElegido = cmbModelo.SelectedItem.ToString
+
+            Try
+                'Abro conexion
+                Conexion.Open()
+
+                'declaro objeto comando
+                Dim comando As New MySqlCommand
+
+                'Indico conexion activa.
+                comando.Connection = Conexion
+
+                'Indico tipo de instruccion
+                comando.CommandType = CommandType.Text
+
+                'Cargo instruccion sql
+                comando.CommandText = "select id_modelo from modelo where nombre_modelo = @nombre_modelo;"
+
+                comando.Parameters.AddWithValue("@nombre_modelo", modeloElegido)
+
+                Dim drModelo As MySqlDataReader
+
+                'Traigo datos de la BD
+                drModelo = comando.ExecuteReader
+
+                If drModelo.Read() Then
+                    id_modelo = drModelo("id_modelo")
+                End If
+
+
+                drModelo.Close()
+                Conexion.Close()
+
+
+            Catch ex As Exception
+                'Imprimo mensaje en caso de error
+                MsgBox(ex.Message)
+                Conexion.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click, Button1.Click
+        Call LimpiarForms()
+    End Sub
+
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Me.Close()
+        PantallaPrincipal.Show()
+    End Sub
+
+    Private Sub btnActulizarStock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActulizarStock.Click
+        Me.Close()
+        Stock.Show()
+    End Sub
+
+    Private Sub btnTalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTalle.Click
+        Me.Close()
+        ABMTalle.Show()
+    End Sub
+
+    Private Sub btnImagenes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImagenes.Click
+        Me.Close()
+        ABMImagenes.Show()
+    End Sub
+
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
 
         If txtCodigo.Text = "" Or txtDescipcion.Text = "" Then
@@ -221,8 +503,8 @@ Public Class Productos
                 MsgBox("Productos agregados: " + Respuesta.ToString)
 
             End If
-            Call LimpiarCampos()
-
+            Call LimpiarForms()
+            Call CargarList()
             'Cierro conexion.
             Conexion.Close()
         Catch ex As Exception
@@ -230,184 +512,133 @@ Public Class Productos
             MsgBox(ex.Message)
             Conexion.Close()
         End Try
-
-
     End Sub
 
-    Private Sub btnCategorias_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCategorias.Click
-        Me.Close()
-        'Dim formCategorias As New ABMCategorias()
-        ' formCategorias.ShowDialog()
-        ABMCategorias.Show()
+    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+        Call LimpiarForms()
+        Call HabilitarCampos()
     End Sub
 
+    Private Sub lstProductos_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstProductos.SelectedIndexChanged
+        If lstProductos.SelectedItem Is Nothing Then
+            Exit Sub
+        End If
+        Try
+            Conexion.Open()
 
-    Private Sub btnColor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnColor.Click
-        Me.Close()
-        ABMColor.Show()
-    End Sub
+            'Declaro objeto comando
+            Dim comando As New MySqlCommand
+
+            'Indico conexion activa
+            comando.Connection = Conexion
+
+            'Indico tipo de instruccion
+            comando.CommandType = CommandType.Text
+
+            'Cargo el sql buscando igualdades con items del list
+            comando.CommandText = "select * from producto where codigo_producto = @codigos ;"
+            comando.Parameters.AddWithValue("@codigos", lstProductos.SelectedItem.ToString)
+
+            'Declaro obejto data reade
+            Dim drProducto As MySqlDataReader
+
+            'Traigo datos desde BD
+            drProducto = comando.ExecuteReader
+
+            'Si encontre coincidencias
+            If drProducto.HasRows Then
+                'Primero limpio forms
+                Call LimpiarForms()
+                'Leemos las categorias encontradas
+                drProducto.Read()
+                'Cargamos txt con los campos del registro seleccionado.
+                txtCodigo.Text = drProducto("codigo_producto")
+                txtDescipcion.Text = drProducto("descripcion")
+                cmbGenero.SelectedItem = drProducto("genero")
+                cmbTemporada.SelectedItem = drProducto("temporada")
 
 
-    Private Sub btnModelos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModelos.Click
-        Me.Close()
-        ABMModelo.Show()
-    End Sub
+                id_categoria = drProducto("id_categoria")
+                id_marca = drProducto("id_marca")
+                id_modelo = drProducto("id_modelo")
 
+<<<<<<< HEAD
     Private Sub btnMarca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMarca.Click
         Me.Close()
         ABMMarcas.Show()
     End Sub
+=======
+                drProducto.Close()
 
-    Private Sub Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call CargarModelos()
-        Call CargarCategorias()
-        Call CargarMarcas()
-        cmbGenero.Items.Add("Hombre")
-        cmbGenero.Items.Add("Mujer")
-        cmbTemporada.Items.Add("Primavera - Verano")
-        cmbTemporada.Items.Add("Otoño - Invierno")
-        Call Conectar()
-    End Sub
+                comando.Parameters.Clear()
+>>>>>>> 373277c250345c321872b4a2381e4718c25375ed
 
-    Private Sub cmbCategoria_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCategoria.SelectedIndexChanged
-        If cmbCategoria.SelectedIndex >= 0 Then
+                comando.CommandText = "select nombre_categoria from categoria where id_categoria = @id_categoria;"
+                comando.Parameters.AddWithValue("@id_categoria", id_categoria)
 
-
-            categoriaElegida = cmbCategoria.SelectedItem.ToString
-
-            Try
-                'Abro conexion
-                Conexion.Open()
-
-                'declaro objeto comando
-                Dim comando As New MySqlCommand
-
-                'Indico conexion activa.
-                comando.Connection = Conexion
-
-                'Indico tipo de instruccion
-                comando.CommandType = CommandType.Text
-
-                'Cargo instruccion sql
-                comando.CommandText = "select id_categoria from categoria where nombre_categoria = @nombre_categoria;"
-
-                comando.Parameters.AddWithValue("@nombre_categoria", categoriaElegida)
-
+                'Declaro obejto data reade
                 Dim drCategoria As MySqlDataReader
 
-                'Traigo datos de la BD
-                drCategoria = comando.ExecuteReader
+                'Traigo datos desde BD
+                drCategoria = comando.ExecuteReader()
+
 
                 If drCategoria.Read() Then
-                    id_Categoria = drCategoria("id_categoria")
+                    cmbCategoria.SelectedItem = drCategoria("nombre_categoria").ToString()
                 End If
-
 
                 drCategoria.Close()
-                Conexion.Close()
 
 
-            Catch ex As Exception
-                'Imprimo mensaje en caso de error
-                MsgBox(ex.Message)
-                Conexion.Close()
-            End Try
-        End If
-    End Sub
+                comando.Parameters.Clear()
 
-    Private Sub cmbMarca_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMarca.SelectedIndexChanged
-        If cmbMarca.SelectedIndex >= 0 Then
+                comando.CommandText = "select nombre_marca from marca where id_marca = @id_marca;"
+                comando.Parameters.AddWithValue("@id_marca", id_marca)
 
-
-            marcaElegida = cmbMarca.SelectedItem.ToString
-
-            Try
-                'Abro conexion
-                Conexion.Open()
-
-                'declaro objeto comando
-                Dim comando As New MySqlCommand
-
-                'Indico conexion activa.
-                comando.Connection = Conexion
-
-                'Indico tipo de instruccion
-                comando.CommandType = CommandType.Text
-
-                'Cargo instruccion sql
-                comando.CommandText = "select id_marca from marca where nombre_marca = @nombre_marca;"
-
-                comando.Parameters.AddWithValue("@nombre_marca", marcaElegida)
-
+                'Declaro obejto data reade
                 Dim drMarca As MySqlDataReader
 
-                'Traigo datos de la BD
-                drMarca = comando.ExecuteReader
+                'Traigo datos desde BD
+                drMarca = comando.ExecuteReader()
 
+
+                'Si encontre coincidencias
                 If drMarca.Read() Then
-                    id_marca = drMarca("id_marca")
+                    cmbMarca.SelectedItem = drMarca("nombre_marca").ToString
                 End If
-
-
                 drMarca.Close()
-                Conexion.Close()
 
 
-            Catch ex As Exception
-                'Imprimo mensaje en caso de error
-                MsgBox(ex.Message)
-                Conexion.Close()
-            End Try
-        End If
+                comando.Parameters.Clear()
 
-    End Sub
+                comando.CommandText = "select * from modelo where id_modelo = @id_modelo;"
+                comando.Parameters.AddWithValue("@id_modelo", id_modelo)
 
-    Private Sub cmbModelo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbModelo.SelectedIndexChanged
-        If cmbMarca.SelectedIndex >= 0 Then
-
-
-            modeloElegido = cmbModelo.SelectedItem.ToString
-
-            Try
-                'Abro conexion
-                Conexion.Open()
-
-                'declaro objeto comando
-                Dim comando As New MySqlCommand
-
-                'Indico conexion activa.
-                comando.Connection = Conexion
-
-                'Indico tipo de instruccion
-                comando.CommandType = CommandType.Text
-
-                'Cargo instruccion sql
-                comando.CommandText = "select id_modelo from modelo where nombre_modelo = @nombre_modelo;"
-
-                comando.Parameters.AddWithValue("@nombre_modelo", modeloElegido)
-
+                'Declaro obejto data reade
                 Dim drModelo As MySqlDataReader
 
-                'Traigo datos de la BD
-                drModelo = comando.ExecuteReader
+                'Traigo datos desde BD
+                drModelo = comando.ExecuteReader()
 
+
+                'Si encontre coincidencias
                 If drModelo.Read() Then
-                    id_modelo = drModelo("id_modelo")
+                    cmbModelo.SelectedItem = drModelo("nombre_modelo").ToString
                 End If
-
-
                 drModelo.Close()
-                Conexion.Close()
-
-
-            Catch ex As Exception
-                'Imprimo mensaje en caso de error
-                MsgBox(ex.Message)
-                Conexion.Close()
-            End Try
-        End If
+            Else
+                Call LimpiarForms()
+                drProducto.Close()
+            End If
+            'Cierro conexion
+            Conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Conexion.Close()
+        End Try
     End Sub
 
+<<<<<<< HEAD
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Call LimpiarCampos()
 
@@ -421,6 +652,10 @@ Public Class Productos
     Private Sub btnActulizarStock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActulizarStock.Click
         Me.Close()
         Stock.Show()
+=======
+    Private Sub btnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditar.Click
+        Call HabilitarCampos()
+>>>>>>> 373277c250345c321872b4a2381e4718c25375ed
     End Sub
 
     Private Sub btnTalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTalle.Click
