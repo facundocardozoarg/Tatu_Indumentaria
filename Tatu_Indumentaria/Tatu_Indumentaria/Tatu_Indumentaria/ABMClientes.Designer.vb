@@ -62,6 +62,7 @@ Partial Class ABMClientes
         Me.chkNombre = New System.Windows.Forms.CheckBox()
         Me.chkDni = New System.Windows.Forms.CheckBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.PrintDoc = New System.Drawing.Printing.PrintDocument()
         Me.SuspendLayout()
         '
         'Label3
@@ -484,6 +485,9 @@ Partial Class ABMClientes
         Me.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImprimir.UseVisualStyleBackColor = False
         '
+        'PrintDoc
+        '
+        '
         'ABMClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -576,4 +580,5 @@ Partial Class ABMClientes
     Friend WithEvents chkNombre As System.Windows.Forms.CheckBox
     Friend WithEvents chkDni As System.Windows.Forms.CheckBox
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents PrintDoc As System.Drawing.Printing.PrintDocument
 End Class
