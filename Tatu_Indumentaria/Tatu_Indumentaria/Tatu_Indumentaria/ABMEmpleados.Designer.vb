@@ -489,7 +489,7 @@ Partial Class ABMEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(610, 560)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)

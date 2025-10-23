@@ -407,7 +407,7 @@ Partial Class ABMClientes
         'btnVolver
         '
         Me.btnVolver.BackColor = System.Drawing.Color.LightCyan
-        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
         Me.btnVolver.Location = New System.Drawing.Point(477, 495)
         Me.btnVolver.Name = "btnVolver"
@@ -475,7 +475,7 @@ Partial Class ABMClientes
         'btnImprimir
         '
         Me.btnImprimir.BackColor = System.Drawing.Color.LightCyan
-        Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
         Me.btnImprimir.Location = New System.Drawing.Point(351, 495)
         Me.btnImprimir.Name = "btnImprimir"
@@ -492,6 +492,7 @@ Partial Class ABMClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(610, 560)
         Me.Controls.Add(Me.chkNombre)
         Me.Controls.Add(Me.chkDni)

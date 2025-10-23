@@ -51,7 +51,6 @@ Partial Class Productos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -64,7 +63,7 @@ Partial Class Productos
         Me.btnCategorias.Image = CType(resources.GetObject("btnCategorias.Image"), System.Drawing.Image)
         Me.btnCategorias.Location = New System.Drawing.Point(12, 12)
         Me.btnCategorias.Name = "btnCategorias"
-        Me.btnCategorias.Size = New System.Drawing.Size(116, 48)
+        Me.btnCategorias.Size = New System.Drawing.Size(118, 48)
         Me.btnCategorias.TabIndex = 11
         Me.btnCategorias.Text = "Categorias"
         Me.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -279,7 +278,7 @@ Partial Class Productos
         'btnImagenes
         '
         Me.btnImagenes.BackColor = System.Drawing.Color.LightCyan
-        Me.btnImagenes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnImagenes.Font = New System.Drawing.Font("Segoe UI Semibold", 8.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnImagenes.Image = CType(resources.GetObject("btnImagenes.Image"), System.Drawing.Image)
         Me.btnImagenes.Location = New System.Drawing.Point(500, 12)
         Me.btnImagenes.Name = "btnImagenes"
@@ -294,7 +293,7 @@ Partial Class Productos
         Me.btnCancelar.BackColor = System.Drawing.Color.LightCyan
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
-        Me.btnCancelar.Location = New System.Drawing.Point(515, 364)
+        Me.btnCancelar.Location = New System.Drawing.Point(515, 320)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(121, 40)
         Me.btnCancelar.TabIndex = 9
@@ -383,21 +382,9 @@ Partial Class Productos
         Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEditar.UseVisualStyleBackColor = False
         '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.LightCyan
-        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(515, 320)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(121, 40)
-        Me.btnModificar.TabIndex = 8
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
         'TextBox1
         '
+        Me.TextBox1.BackColor = System.Drawing.Color.SeaShell
         Me.TextBox1.Location = New System.Drawing.Point(375, 153)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
@@ -419,7 +406,7 @@ Partial Class Productos
         Me.Button1.BackColor = System.Drawing.Color.LightCyan
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(516, 408)
+        Me.Button1.Location = New System.Drawing.Point(516, 364)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 40)
         Me.Button1.TabIndex = 9
@@ -445,7 +432,6 @@ Partial Class Productos
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnNuevo)
-        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.Label8)
@@ -465,6 +451,7 @@ Partial Class Productos
         Me.Controls.Add(Me.btnImagenes)
         Me.Controls.Add(Me.btnTalle)
         Me.Controls.Add(Me.btnCategorias)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Productos"
@@ -502,7 +489,6 @@ Partial Class Productos
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnEditar As System.Windows.Forms.Button
-    Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button

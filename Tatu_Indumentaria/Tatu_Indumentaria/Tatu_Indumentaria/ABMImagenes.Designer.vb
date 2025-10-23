@@ -22,11 +22,11 @@ Partial Class ABMImagenes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ABMImagenes))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtUrl = New System.Windows.Forms.TextBox()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCargar = New System.Windows.Forms.Button()
@@ -37,15 +37,18 @@ Partial Class ABMImagenes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCodigos = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         CType(Me.pbxImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label3.Location = New System.Drawing.Point(21, 425)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 17)
+        Me.Label3.Size = New System.Drawing.Size(38, 19)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "URL:"
         '
@@ -59,73 +62,87 @@ Partial Class ABMImagenes
         '
         'btnVolver
         '
+        Me.btnVolver.BackColor = System.Drawing.Color.LightCyan
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
         Me.btnVolver.Location = New System.Drawing.Point(487, 440)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(106, 32)
+        Me.btnVolver.Size = New System.Drawing.Size(120, 49)
         Me.btnVolver.TabIndex = 19
         Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
+        Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVolver.UseVisualStyleBackColor = False
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(487, 329)
+        Me.btnEliminar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
+        Me.btnEliminar.Location = New System.Drawing.Point(487, 340)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(106, 32)
+        Me.btnEliminar.Size = New System.Drawing.Size(120, 49)
         Me.btnEliminar.TabIndex = 18
         Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(487, 225)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(106, 32)
-        Me.btnModificar.TabIndex = 20
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(487, 274)
+        Me.btnLimpiar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
+        Me.btnLimpiar.Location = New System.Drawing.Point(487, 285)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(106, 32)
+        Me.btnLimpiar.Size = New System.Drawing.Size(120, 49)
         Me.btnLimpiar.TabIndex = 22
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
+        Me.btnLimpiar.Text = "Borrar"
+        Me.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLimpiar.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
+        Me.btnGuardar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
         Me.btnGuardar.Location = New System.Drawing.Point(487, 177)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(106, 32)
+        Me.btnGuardar.Size = New System.Drawing.Size(120, 49)
         Me.btnGuardar.TabIndex = 21
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnCargar
         '
-        Me.btnCargar.Location = New System.Drawing.Point(487, 128)
+        Me.btnCargar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnCargar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
+        Me.btnCargar.Location = New System.Drawing.Point(487, 122)
         Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(106, 32)
+        Me.btnCargar.Size = New System.Drawing.Size(120, 49)
         Me.btnCargar.TabIndex = 17
         Me.btnCargar.Text = "Cargar"
-        Me.btnCargar.UseVisualStyleBackColor = True
+        Me.btnCargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCargar.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(229, 96)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 17)
+        Me.Label2.Size = New System.Drawing.Size(43, 19)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "Color"
         '
         'cmbColor
         '
+        Me.cmbColor.BackColor = System.Drawing.Color.SeaShell
+        Me.cmbColor.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbColor.FormattingEnabled = True
         Me.cmbColor.Location = New System.Drawing.Point(232, 128)
         Me.cmbColor.Name = "cmbColor"
-        Me.cmbColor.Size = New System.Drawing.Size(198, 24)
+        Me.cmbColor.Size = New System.Drawing.Size(198, 25)
         Me.cmbColor.TabIndex = 15
         '
         'pbxImagen
@@ -138,38 +155,70 @@ Partial Class ABMImagenes
         '
         'lstCodigos
         '
+        Me.lstCodigos.BackColor = System.Drawing.Color.SeaShell
+        Me.lstCodigos.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.lstCodigos.FormattingEnabled = True
-        Me.lstCodigos.ItemHeight = 16
+        Me.lstCodigos.ItemHeight = 17
         Me.lstCodigos.Location = New System.Drawing.Point(24, 96)
         Me.lstCodigos.Name = "lstCodigos"
-        Me.lstCodigos.Size = New System.Drawing.Size(176, 308)
+        Me.lstCodigos.Size = New System.Drawing.Size(176, 293)
         Me.lstCodigos.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(21, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 17)
+        Me.Label1.Size = New System.Drawing.Size(115, 19)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Código Producto"
         '
         'txtCodigos
         '
+        Me.txtCodigos.BackColor = System.Drawing.Color.SeaShell
+        Me.txtCodigos.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.txtCodigos.Location = New System.Drawing.Point(24, 52)
         Me.txtCodigos.Name = "txtCodigos"
-        Me.txtCodigos.Size = New System.Drawing.Size(176, 22)
+        Me.txtCodigos.Size = New System.Drawing.Size(176, 25)
         Me.txtCodigos.TabIndex = 11
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.LightCyan
+        Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
+        Me.btnNuevo.Location = New System.Drawing.Point(487, 66)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(120, 49)
+        Me.btnNuevo.TabIndex = 144
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnModificar.Location = New System.Drawing.Point(487, 232)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(120, 49)
+        Me.btnModificar.TabIndex = 20
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
         'ABMImagenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(696, 615)
+        Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtUrl)
         Me.Controls.Add(Me.btnVolver)
@@ -184,7 +233,10 @@ Partial Class ABMImagenes
         Me.Controls.Add(Me.lstCodigos)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCodigos)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ABMImagenes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ABMImagenes"
         CType(Me.pbxImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -195,7 +247,6 @@ Partial Class ABMImagenes
     Friend WithEvents txtUrl As System.Windows.Forms.TextBox
     Friend WithEvents btnVolver As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
-    Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnCargar As System.Windows.Forms.Button
@@ -206,4 +257,6 @@ Partial Class ABMImagenes
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtCodigos As System.Windows.Forms.TextBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btnNuevo As System.Windows.Forms.Button
+    Friend WithEvents btnModificar As System.Windows.Forms.Button
 End Class

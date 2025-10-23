@@ -7,7 +7,6 @@
     End Sub
 
     Private Sub btnGestionEnvio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGestionEnvio.Click
-        Me.Close()
     End Sub
 
     Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click

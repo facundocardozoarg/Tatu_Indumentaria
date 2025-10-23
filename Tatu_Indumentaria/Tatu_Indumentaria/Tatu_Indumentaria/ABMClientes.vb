@@ -787,7 +787,7 @@ Public Class ABMClientes
             Dim FuenteNormal As New Font("Arial", 10)
 
             'imprimir margenes
-            Dim Margen As String
+
 
 
             'area total de la pagina de impresion
