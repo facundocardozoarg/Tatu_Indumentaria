@@ -253,11 +253,6 @@ Public Class Productos
         ABMModelo.Show()
     End Sub
 
-    Private Sub btnTalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTalle.Click, Button1.Click
-        Me.Close()
-        ABMTalle.Show()
-    End Sub
-
     Private Sub btnMarca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMarca.Click
         Me.Close()
         ABMMarcas.Show()
@@ -419,12 +414,17 @@ Public Class Productos
     End Sub
 
     Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        Me.Hide()
+        Me.Close()
         PantallaPrincipal.Show()
     End Sub
 
     Private Sub btnActulizarStock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActulizarStock.Click
-        Me.Hide()
+        Me.Close()
         Stock.Show()
+    End Sub
+
+    Private Sub btnTalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTalle.Click
+        Me.Close()
+        ABMTalle.Show()
     End Sub
 End Class

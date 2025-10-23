@@ -333,6 +333,7 @@ Partial Class Stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(573, 675)
         Me.Controls.Add(Me.txtModelo)
         Me.Controls.Add(Me.txtMarca)
