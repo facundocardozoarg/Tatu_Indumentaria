@@ -562,16 +562,9 @@ Public Class Productos
                 id_marca = drProducto("id_marca")
                 id_modelo = drProducto("id_modelo")
 
-<<<<<<< HEAD
-    Private Sub btnMarca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMarca.Click
-        Me.Close()
-        ABMMarcas.Show()
-    End Sub
-=======
                 drProducto.Close()
 
                 comando.Parameters.Clear()
->>>>>>> 373277c250345c321872b4a2381e4718c25375ed
 
                 comando.CommandText = "select nombre_categoria from categoria where id_categoria = @id_categoria;"
                 comando.Parameters.AddWithValue("@id_categoria", id_categoria)
@@ -638,28 +631,7 @@ Public Class Productos
         End Try
     End Sub
 
-<<<<<<< HEAD
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
-        Call LimpiarCampos()
-
-    End Sub
-
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        Me.Close()
-        PantallaPrincipal.Show()
-    End Sub
-
-    Private Sub btnActulizarStock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActulizarStock.Click
-        Me.Close()
-        Stock.Show()
-=======
     Private Sub btnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditar.Click
         Call HabilitarCampos()
->>>>>>> 373277c250345c321872b4a2381e4718c25375ed
-    End Sub
-
-    Private Sub btnTalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTalle.Click
-        Me.Close()
-        ABMTalle.Show()
     End Sub
 End Class

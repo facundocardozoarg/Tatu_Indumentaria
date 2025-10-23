@@ -10,7 +10,6 @@ Public Class ABMEmpleados
     Public id_provincia As Integer
     Public id_pais As Integer
     Public estado As Integer
-    Public bandera As Boolean = False
 
     Public id_empleado As Integer
 
@@ -22,7 +21,6 @@ Public Class ABMEmpleados
         txtDireccionEmpleado.Text = ""
         txtTelefonoEmpleado.Text = ""
         txtCorreoEmpleado.Text = ""
-        txtBusqueda.Text = ""
         cmbGenero.SelectedIndex = -1
         cmbCiudad.SelectedIndex = -1
         cmbProvincia.SelectedIndex = -1
@@ -61,7 +59,9 @@ Public Class ABMEmpleados
         cmbPais.Enabled = False
     End Sub
 
-    Sub CargarList(ByVal dato As String)
+
+
+    Sub CargarList()
         Try
             'Ejecuto la coneccion a la BD
             Conexion.Open()
@@ -72,23 +72,11 @@ Public Class ABMEmpleados
             'Configuro la conexion activa.
             comando.Connection = Conexion
 
-            'Indicuto el tipo de instruccion
+            'indico el tipo de instruccion
             comando.CommandType = CommandType.Text
 
-            If dato = "" Then
-                'Sql muestro nombre de cliente filtro por estado activo y los ordeno.
-                comando.CommandText = "select nombre,apellido from empleado where estado = '" & 1 & "' order by CONCAT(nombre, ' ', apellido);"
-
-            ElseIf dato <> "" And chkDni.Checked Then
-                comando.CommandText = "select nombre,apellido from empleado where estado = '" & 1 & "' and dni like '" & dato & "%' order by CONCAT(nombre, ' ', apellido);"
-
-            ElseIf dato <> "" And chkNombre.Checked Then
-                comando.CommandText = "select nombre,apellido from empleado where estado = '" & 1 & "' and nombre like '" & dato & "%' order by CONCAT(nombre, ' ', apellido);"
-
-            Else
-                Conexion.Close()
-                Exit Sub
-            End If
+            'Sql muestro nombre de empleado filtro por estado activo y los ordeno.
+            comando.CommandText = "select nombre,apellido from empleado where estado = '" & 1 & "' order by CONCAT(nombre, ' ', apellido)"
 
             'Declaro Objeto DataReader
             Dim drEmpleado As MySqlDataReader
@@ -103,7 +91,7 @@ Public Class ABMEmpleados
 
                 'Recorro el data reader
                 Do While drEmpleado.Read
-                    'Agrego los nombres de clientes a los item del list
+                    'Agrego los nombres de empleados a los item del list
                     lstEmpleados.Items.Add(drEmpleado("nombre") + " " + drEmpleado("apellido"))
                 Loop
             End If
@@ -117,6 +105,7 @@ Public Class ABMEmpleados
             MsgBox(ex.Message)
             Conexion.Close()
         End Try
+
     End Sub
 
 
@@ -267,7 +256,7 @@ Public Class ABMEmpleados
 
     Private Sub ABMEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call Conectar()
-        Call CargarList(txtBusqueda.Text.ToString)
+        Call CargarList()
         Call DeshabilitarCampos()
         cmbGenero.SelectedIndex = -1
         cmbGenero.Items.Add("Masculino")
@@ -313,8 +302,6 @@ Public Class ABMEmpleados
     End Sub
 
     Private Sub lstEmpleados_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstEmpleados.SelectedIndexChanged
-        chkDni.Checked = False
-        chkNombre.Checked = False
         Call DeshabilitarCampos()
         'Evito un error al hacer click donde no tenga items el list.
         If lstEmpleados.SelectedItem Is Nothing Then
@@ -533,7 +520,7 @@ Public Class ABMEmpleados
             lstEmpleados.Items.Clear()
 
             'Actualizo listbox
-            Call CargarList(txtBusqueda.Text.ToString)
+            Call CargarList()
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -619,7 +606,7 @@ Public Class ABMEmpleados
             End If
 
 
-            Call CargarList(txtBusqueda.Text.ToString)
+            Call CargarList()
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -717,7 +704,7 @@ Public Class ABMEmpleados
             'Cierro conexion.
             Conexion.Close()
 
-            Call CargarList(txtBusqueda.Text.ToString)
+            Call CargarList()
         Catch ex As Exception
             MsgBox(ex.Message)
             Conexion.Close()
@@ -738,7 +725,6 @@ Public Class ABMEmpleados
     End Sub
 
     Private Sub chkDni_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDni.CheckedChanged
-        Call LimpiarForms()
         If chkDni.Checked Then
             chkNombre.Checked = False
         Else
@@ -747,18 +733,10 @@ Public Class ABMEmpleados
     End Sub
 
     Private Sub chkNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombre.CheckedChanged
-        Call LimpiarForms()
         If chkNombre.Checked Then
             chkDni.Checked = False
         Else
             chkNombre.Checked = False
         End If
-    End Sub
-
-    Private Sub txtBusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBusqueda.TextChanged
-        If chkDni.Checked = False And chkNombre.Checked = False Then
-            Exit Sub
-        End If
-        Call CargarList(txtBusqueda.Text.ToString)
     End Sub
 End Class

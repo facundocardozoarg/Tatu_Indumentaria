@@ -129,3 +129,6 @@ D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria
 D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Stock.resources
 D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.vbproj.GenerateResource.Cache
 D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.ABMImagenes.resources
+C:\Users\Acer\Downloads\informes\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.exe
+C:\Users\Acer\Downloads\informes\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.xml
+C:\Users\Acer\Downloads\informes\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.pdb

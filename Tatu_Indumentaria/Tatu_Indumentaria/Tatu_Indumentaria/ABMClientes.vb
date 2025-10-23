@@ -465,10 +465,6 @@ Public Class ABMClientes
         End Try
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        Me.Close()
-        PantallaPrincipal.Show()
-    End Sub
 
     Private Sub btnInactivo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInactivo.Click
         'Verifico que haya algo seleccionado para dejar inactivo
@@ -527,7 +523,7 @@ Public Class ABMClientes
                     respuesta = comando.ExecuteNonQuery
 
                     'Imprimo mensaje.
-                    MsgBox("El cliente ha sido eliminado exitosamente", MsgBoxStyle.Information, "Eliminar")
+                    MsgBox("El cliente ha sido eliminado exitosamente", MsgBoxStyle.Information, "Inactivar")
                     Call LimpiarForms()
                 End If
 
@@ -772,5 +768,102 @@ Public Class ABMClientes
                 Exit Sub
             End If
             Call CargarList(txtBusqueda.Text.ToString)
+    End Sub
+
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Me.Close()
+        PantallaPrincipal.Show()
+    End Sub
+
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+        PrintDoc.Print()
+    End Sub
+
+    Private Sub PrintDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDoc.PrintPage
+        'diseñamos el formulario a imprimir
+        Try
+            'defino tipos de fuentes
+            Dim FuenteTitulo As New Font("Arial", 15, FontStyle.Bold)
+            Dim FuenteNormal As New Font("Arial", 10)
+
+            'imprimir margenes
+            Dim Margen As String
+
+
+            'area total de la pagina de impresion
+            'Margen = e.PageBounds.ToString
+            'e.Graphics.DrawString("Area de Pagina: " + Margen, FuenteNormal, Brushes.Blue, 100, 50)
+            'area de la hoja
+            ' Margen = e.PageSettings.ToString
+            'e.Graphics.DrawString("Propiedades de Hoja: " + Margen, FuenteNormal, Brushes.Brown, 100, 70)
+            'margenes de pagina
+            ' Margen = e.MarginBounds.ToString
+            ' e.Graphics.DrawString("Margenes de Hoja: " + Margen, FuenteNormal, Brushes.Black, 100, 90)
+
+            'imprimir la fecha
+            e.Graphics.DrawString("Fecha de impresión de listado: ", FuenteNormal, Brushes.Black, 200, 1000)
+            e.Graphics.DrawString(Date.Now.ToLongDateString + "  " + Date.Now.ToLongTimeString, FuenteNormal, Brushes.Black, 450, 1000)
+
+            'imprimir imagen desde el picture
+            'e.Graphics.DrawImage(PictureBox1.Image, 100, 110, 100, 70)
+
+            'imprimir un rectangulo
+            e.Graphics.DrawRectangle(Pens.Brown, 110, 140, 600, 500)
+
+            'imprimo lineas
+            'linea horiz
+            'e.Graphics.DrawLine(Pens.Red, 100, 350, 700, 350)
+            'e.Graphics.DrawLine(Pens.DarkOrange, 350, 100, 350, 800)
+
+            'imprimo titulo
+            e.Graphics.DrawString("Listado de Clientes", FuenteTitulo, Brushes.Gold, 110, 110)
+
+            'imprimir elipse
+            'e.Graphics.DrawEllipse(Pens.Black, 200, 200, 150, 150)
+
+
+            'traigo datos de BD para impresion
+            Conexion.Open()
+            Dim Comando As New MySqlCommand
+            Comando.Connection = Conexion
+            Comando.CommandType = CommandType.Text
+            Comando.CommandText = "select * from cliente order by apellido;"
+
+            Dim cabecera = "Cant. -      Nombre    -      Apellido    -      Dni    -      Telefono    -      email"
+            e.Graphics.DrawString(cabecera, FuenteNormal, Brushes.Indigo, 120, 150)
+            e.Graphics.DrawLine(Pens.Silver, 110, 170, 710, 170)
+            Dim DredSocio As MySqlDataReader
+            DredSocio = Comando.ExecuteReader
+
+            If DredSocio.HasRows Then
+                Dim PosY As Integer = 185
+                Dim Datos As String
+                Dim cont = 1
+                Do While DredSocio.Read
+
+                    Datos = "  " + cont.ToString + "    -    " + DredSocio("nombre").ToString + "     -    " + DredSocio("apellido").ToString + "    -    " + DredSocio("dni").ToString + "    -    " + DredSocio("telefono").ToString + "    -    " + DredSocio("email").ToString
+                    e.Graphics.DrawString(Datos, FuenteNormal, Brushes.Black, 120, PosY)
+                    e.Graphics.DrawLine(Pens.Red, 110, PosY + 20, 710, PosY + 20)
+                    PosY += 25
+                    cont += 1
+
+                Loop
+            End If
+
+            DredSocio.Close()
+            Conexion.Close()
+
+            'If Pagina < 5 Then
+            'salto de pagina
+            'Pagina += 1
+            ' e.HasMorePages = True
+            'End If
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
     End Sub
 End Class

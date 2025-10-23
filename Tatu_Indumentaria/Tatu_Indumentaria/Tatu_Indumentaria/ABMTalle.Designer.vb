@@ -194,7 +194,6 @@ Partial Class ABMTalle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(530, 470)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnModificar)

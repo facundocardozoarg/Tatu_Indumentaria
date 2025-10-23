@@ -49,6 +49,7 @@ Partial Class ABMEmpleados
         Me.chkNombre = New System.Windows.Forms.CheckBox()
         Me.chkDni = New System.Windows.Forms.CheckBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -81,7 +82,7 @@ Partial Class ABMEmpleados
         Me.txtCorreoEmpleado.MaxLength = 50
         Me.txtCorreoEmpleado.Name = "txtCorreoEmpleado"
         Me.txtCorreoEmpleado.Size = New System.Drawing.Size(148, 25)
-        Me.txtCorreoEmpleado.TabIndex = 6
+        Me.txtCorreoEmpleado.TabIndex = 7
         '
         'dtpFechaNac
         '
@@ -90,7 +91,7 @@ Partial Class ABMEmpleados
         Me.dtpFechaNac.MinimumSize = New System.Drawing.Size(4, 25)
         Me.dtpFechaNac.Name = "dtpFechaNac"
         Me.dtpFechaNac.Size = New System.Drawing.Size(148, 25)
-        Me.dtpFechaNac.TabIndex = 7
+        Me.dtpFechaNac.TabIndex = 6
         '
         'btnGrillaEmpleados
         '
@@ -183,7 +184,7 @@ Partial Class ABMEmpleados
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(158, 110)
+        Me.Label2.Location = New System.Drawing.Point(173, 110)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(119, 19)
         Me.Label2.TabIndex = 211
@@ -214,7 +215,7 @@ Partial Class ABMEmpleados
         '
         Me.txtIdEmpleado.BackColor = System.Drawing.Color.SeaShell
         Me.txtIdEmpleado.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.txtIdEmpleado.Location = New System.Drawing.Point(295, 109)
+        Me.txtIdEmpleado.Location = New System.Drawing.Point(295, 110)
         Me.txtIdEmpleado.Name = "txtIdEmpleado"
         Me.txtIdEmpleado.ReadOnly = True
         Me.txtIdEmpleado.Size = New System.Drawing.Size(29, 25)
@@ -347,9 +348,22 @@ Partial Class ABMEmpleados
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label15.Location = New System.Drawing.Point(8, 38)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(121, 19)
+        Me.Label15.Size = New System.Drawing.Size(104, 19)
         Me.Label15.TabIndex = 240
-        Me.Label15.Text = "Buscar Empleados"
+        Me.Label15.Text = "Buscar Clientes"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.LightCyan
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(477, 35)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(120, 40)
+        Me.btnBuscar.TabIndex = 239
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtBusqueda
         '
@@ -475,7 +489,7 @@ Partial Class ABMEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(610, 560)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
@@ -491,6 +505,7 @@ Partial Class ABMEmpleados
         Me.Controls.Add(Me.chkNombre)
         Me.Controls.Add(Me.chkDni)
         Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.btnInactivo)
         Me.Controls.Add(Me.btnGuardar)
@@ -550,6 +565,7 @@ Partial Class ABMEmpleados
     Friend WithEvents chkNombre As System.Windows.Forms.CheckBox
     Friend WithEvents chkDni As System.Windows.Forms.CheckBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label

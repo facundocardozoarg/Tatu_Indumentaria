@@ -363,7 +363,6 @@ Partial Class ABMProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(638, 536)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnInactivo)
