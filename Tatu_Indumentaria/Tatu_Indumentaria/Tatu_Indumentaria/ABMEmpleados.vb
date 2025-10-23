@@ -454,7 +454,7 @@ Public Class ABMEmpleados
     Private Sub btnInactivo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInactivo.Click
         'Verifico que haya algo seleccionado para dejar inactivo
         If txtIdEmpleado.Text = "" Then
-            MsgBox("Debe seleccionar un empleado para dejar inactivo", MsgBoxStyle.Exclamation, "Inactivar")
+            MsgBox("Debe seleccionar un empleado para eliminar", MsgBoxStyle.Exclamation, "Eliminar")
             Exit Sub
         End If
 
@@ -501,14 +501,14 @@ Public Class ABMEmpleados
                 comando.Parameters.AddWithValue("@estado", 0)
 
                 'Imprimo mensaje con accion segun respuesta.
-                If MsgBox("¿Esta seguro que desea dejar inactivo a este empleado?", MsgBoxStyle.Critical + MsgBoxStyle.YesNo, "¿Seguro de dejar inactivo?") = MsgBoxResult.Yes Then
+                If MsgBox("¿Esta seguro que desea eliminar a este empleado?", MsgBoxStyle.Critical + MsgBoxStyle.YesNo, "¿Seguro de eliminar?") = MsgBoxResult.Yes Then
                     Dim respuesta As Integer
 
                     'Ejecuto el delete
                     respuesta = comando.ExecuteNonQuery
 
                     'Imprimo mensaje.
-                    MsgBox("El empleado ha sido dejado inactivo exitosamente", MsgBoxStyle.Information, "Inactivar")
+                    MsgBox("El empleado ha sido eliminado exitosamente", MsgBoxStyle.Information, "Eliminar")
                     Call LimpiarForms()
                 End If
 

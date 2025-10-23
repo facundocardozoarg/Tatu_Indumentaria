@@ -425,7 +425,7 @@ Public Class ABMProveedores
     Private Sub btnInactivo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInactivo.Click
         'Verifico que haya algo seleccionado para dejar inactivo
         If txtIdProveedor.Text = "" Then
-            MsgBox("Debe seleccionar un proveedor para dejar inactivo", MsgBoxStyle.Exclamation, "Inactivar")
+            MsgBox("Debe seleccionar un proveedor para eliminar", MsgBoxStyle.Exclamation, "Eliminar")
             Exit Sub
         End If
 
@@ -472,14 +472,14 @@ Public Class ABMProveedores
                 comando.Parameters.AddWithValue("@estado", 0)
 
                 'Imprimo mensaje con accion segun respuesta.
-                If MsgBox("¿Esta seguro que desea dejar inactivo a este proveedor?", MsgBoxStyle.Critical + MsgBoxStyle.YesNo, "¿Seguro de dejar inactivo?") = MsgBoxResult.Yes Then
+                If MsgBox("¿Esta seguro que desea eliminar a este proveedor?", MsgBoxStyle.Critical + MsgBoxStyle.YesNo, "¿Seguro de dejar eliminar?") = MsgBoxResult.Yes Then
                     Dim respuesta As Integer
 
                     'Ejecuto el delete
                     respuesta = comando.ExecuteNonQuery
 
                     'Imprimo mensaje.
-                    MsgBox("El Proveedor ha sido dejado inactivo exitosamente", MsgBoxStyle.Information, "Inactivar")
+                    MsgBox("El Proveedor ha sido eliminado exitosamente", MsgBoxStyle.Information, "Eliminar")
                     Call LimpiarForms()
                 End If
 
