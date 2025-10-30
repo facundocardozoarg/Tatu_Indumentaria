@@ -10,7 +10,7 @@ Public Class ABMClientes
     Public id_pais As Integer
     Public estado As Integer
     Public bandera As Boolean = False
-
+    Public dni As String
     Public id_cliente As Integer
 
     Sub LimpiarForms()
@@ -21,7 +21,7 @@ Public Class ABMClientes
         txtDireccion.Text = ""
         txtTelefono.Text = ""
         txtCorreo.Text = ""
-        txtBusqueda.Text = ""
+
         cmbGenero.SelectedIndex = -1
         cmbCiudad.SelectedIndex = -1
         cmbProvincia.SelectedIndex = -1
@@ -315,6 +315,7 @@ Public Class ABMClientes
     End Sub
 
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+        txtBusqueda.Text = ""
         Call LimpiarForms()
         Call HabilitarCampos()
         Call CargarPaises()
@@ -371,6 +372,8 @@ Public Class ABMClientes
                 txtCorreo.Text = drCliente("email")
                 cmbGenero.SelectedItem = drCliente("genero")
 
+
+                dni = drCliente("dni")
                 id_ciudad = drCliente("id_ciudad")
 
                 If Not (IsDBNull(drCliente("fecha_nacimiento"))) Then
@@ -531,6 +534,7 @@ Public Class ABMClientes
 
             'Cierro conexion
             Conexion.Close()
+            txtBusqueda.Text = ""
 
             lstClientes.Items.Clear()
 
@@ -564,10 +568,10 @@ Public Class ABMClientes
             Comando.CommandType = CommandType.Text
 
             'cargo instruccion sql
-            Comando.CommandText = "select id_cliente from cliente where id_cliente = @id_cliente;"
+            Comando.CommandText = "select dni from cliente where dni = @dni;"
 
             'Indico parametros 
-            Comando.Parameters.AddWithValue("@id_cliente", txtIdCliente.Text)
+            Comando.Parameters.AddWithValue("@dni", txtDniCliente.Text)
 
             'declaro dreader
             Dim drCliente As MySqlDataReader
@@ -576,12 +580,48 @@ Public Class ABMClientes
             drCliente = Comando.ExecuteReader
 
             'Si no se encuentran registros imprimo mensaje
-            If Not (drCliente.HasRows) Then
-                MsgBox("No se encontraron clientes para editar", MsgBoxStyle.Exclamation, "Editar")
+            If drCliente.HasRows Then
+                'Cierro Data Reader
                 drCliente.Close()
-                Conexion.Close()
-                Exit Sub
+
+                    If txtDniCliente.Text = dni Then
+                        
+                        'Limpio los parametros para que no esten sobrecargados.
+                        Comando.Parameters.Clear()
+
+                        'Cargo la instruccion sql
+                        Comando.CommandText = "update cliente set nombre=@nombre,apellido=@apellido,direccion=@direccion,fecha_nacimiento=@fecha_nacimiento,telefono=@telefono,email=@email,genero=@genero,id_ciudad=(select id_ciudad from ciudad where nombre_ciudad = '" & CiudadElegida & "') where id_cliente=@id_cliente;"
+
+                        'Cargo los parametros
+                        Comando.Parameters.AddWithValue("@id_cliente", txtIdCliente.Text)
+                        Comando.Parameters.AddWithValue("@nombre", txtNombreCliente.Text)
+                        Comando.Parameters.AddWithValue("@apellido", txtApellidoCliente.Text)
+                        Comando.Parameters.AddWithValue("@direccion", txtDireccion.Text)
+                        Comando.Parameters.AddWithValue("@fecha_nacimiento", dtpFechaNac.Value.ToString("yyyy-MM-dd"))
+                        Comando.Parameters.AddWithValue("@telefono", txtTelefono.Text)
+                        Comando.Parameters.AddWithValue("@email", txtCorreo.Text)
+                        Comando.Parameters.AddWithValue("@genero", cmbGenero.SelectedItem.ToString)
+
+
+                        'Imprimo mensaje para confirmar modificacion
+                    If MsgBox("¿Esta seguro que desea modificar el Cliente?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Guardar") = MsgBoxResult.Yes Then
+
+                        'Variable para obtener respuesta del servidor al ejecutar.
+                        Dim respuesta As Integer
+
+                        'Ejecuto el update
+                        respuesta = Comando.ExecuteNonQuery
+
+                        'Informo las categorias modificadas.
+                        MsgBox("Se guardaron los cambios  del cliente exitosamente", MsgBoxStyle.Information, "Guardar")
+                    End If
+                ElseIf txtDniCliente.Text <> dni Then
+                    MsgBox("El DNI que intenta ingresar ya existe", MsgBoxStyle.Critical, "Error al modificar")
+                    Conexion.Close()
+                    Exit Sub
+                End If
             Else
+
                 'Cierro Data Reader
                 drCliente.Close()
 
@@ -615,12 +655,10 @@ Public Class ABMClientes
                     'Informo las categorias modificadas.
                     MsgBox("Se guardaron los cambios  del cliente exitosamente", MsgBoxStyle.Information, "Guardar")
                     Call LimpiarForms()
-
                 End If
-                Conexion.Close()
             End If
-
-
+            txtBusqueda.Text = ""
+            Conexion.Close()
             Call CargarList(txtBusqueda.Text.ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -716,7 +754,10 @@ Public Class ABMClientes
 
                 MsgBox("Se agrego el cliente exitosamente", MsgBoxStyle.Information, "Agregar")
 
+
                 Call LimpiarForms()
+                txtBusqueda.Text = ""
+                Call DeshabilitarCampos()
             End If
             'Cierro conexion.
             Conexion.Close()
@@ -740,12 +781,13 @@ Public Class ABMClientes
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
         Call LimpiarForms()
+        txtBusqueda.Text = ""
     End Sub
 
 
 
     Private Sub chkDni_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDni.CheckedChanged
-        Call LimpiarForms()
+        'Call LimpiarForms()
         If chkDni.Checked Then
             chkNombre.Checked = False
         Else
@@ -755,7 +797,7 @@ Public Class ABMClientes
     End Sub
 
     Private Sub chkNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombre.CheckedChanged
-        Call LimpiarForms()
+        'Call LimpiarForms()
         If chkNombre.Checked Then
             chkDni.Checked = False
         Else

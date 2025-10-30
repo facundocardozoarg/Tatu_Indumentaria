@@ -81,9 +81,9 @@ Partial Class ABMClientes
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(173, 110)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 19)
+        Me.Label2.Size = New System.Drawing.Size(118, 19)
         Me.Label2.TabIndex = 108
-        Me.Label2.Text = "Código Cliente"
+        Me.Label2.Text = "Código __________"
         '
         'Label1
         '

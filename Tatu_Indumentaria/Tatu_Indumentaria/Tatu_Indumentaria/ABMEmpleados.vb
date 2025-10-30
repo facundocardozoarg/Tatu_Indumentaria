@@ -10,8 +10,7 @@ Public Class ABMEmpleados
     Public id_provincia As Integer
     Public id_pais As Integer
     Public estado As Integer
-    Public bandera As Boolean = False
-
+    Public dni As Integer
     Public id_empleado As Integer
 
     Sub LimpiarForms()
@@ -22,7 +21,6 @@ Public Class ABMEmpleados
         txtDireccionEmpleado.Text = ""
         txtTelefonoEmpleado.Text = ""
         txtCorreoEmpleado.Text = ""
-        txtBusqueda.Text = ""
         cmbGenero.SelectedIndex = -1
         cmbCiudad.SelectedIndex = -1
         cmbProvincia.SelectedIndex = -1
@@ -313,8 +311,7 @@ Public Class ABMEmpleados
     End Sub
 
     Private Sub lstEmpleados_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstEmpleados.SelectedIndexChanged
-        chkDni.Checked = False
-        chkNombre.Checked = False
+
         Call DeshabilitarCampos()
         'Evito un error al hacer click donde no tenga items el list.
         If lstEmpleados.SelectedItem Is Nothing Then
@@ -361,6 +358,7 @@ Public Class ABMEmpleados
                 txtCorreoEmpleado.Text = drEmpleado("email")
                 cmbGenero.SelectedItem = drEmpleado("genero")
 
+                dni = txtDniEmpleado.Text
                 id_ciudad = drEmpleado("id_ciudad")
 
                 If Not (IsDBNull(drEmpleado("fecha_nacimiento"))) Then
@@ -523,6 +521,7 @@ Public Class ABMEmpleados
                     'Imprimo mensaje.
                     MsgBox("El empleado ha sido eliminado exitosamente", MsgBoxStyle.Information, "Eliminar")
                     Call LimpiarForms()
+                    txtBusqueda.Text = ""
                 End If
 
             End If
@@ -562,10 +561,10 @@ Public Class ABMEmpleados
             Comando.CommandType = CommandType.Text
 
             'cargo instruccion sql
-            Comando.CommandText = "select id_empleado from empleado where id_empleado = @id_empleado;"
+            Comando.CommandText = "select dni from empleado where dni = @dni;"
 
             'Indico parametros 
-            Comando.Parameters.AddWithValue("@id_empleado", txtIdEmpleado.Text)
+            Comando.Parameters.AddWithValue("@dni", txtDniEmpleado.Text)
 
             'declaro dreader
             Dim drEmpleado As MySqlDataReader
@@ -574,11 +573,46 @@ Public Class ABMEmpleados
             drEmpleado = Comando.ExecuteReader
 
             'Si no se encuentran registros imprimo mensaje
-            If Not (drEmpleado.HasRows) Then
-                MsgBox("No se encontraron empleados para editar", MsgBoxStyle.Exclamation, "Editar")
+            If drEmpleado.HasRows Then
+
                 drEmpleado.Close()
-                Conexion.Close()
-                Exit Sub
+
+                If txtDniEmpleado.Text = dni Then
+                    'Limpio los parametros para que no esten sobrecargados.
+                    Comando.Parameters.Clear()
+
+                    'Cargo la instruccion sql
+                    Comando.CommandText = "update empleado set nombre=@nombre,apellido=@apellido,direccion=@direccion,fecha_nacimiento=@fecha_nacimiento,telefono=@telefono,email=@email,genero=@genero,id_ciudad=(select id_ciudad from ciudad where nombre_ciudad = '" & CiudadElegida & "') where id_empleado=@id_empleado;"
+
+                    'Cargo los parametros
+                    Comando.Parameters.AddWithValue("@id_empleado", txtIdEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@nombre", txtNombreEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@apellido", txtApellidoEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@direccion", txtDireccionEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@fecha_nacimiento", dtpFechaNac.Value.ToString("yyyy-MM-dd"))
+                    Comando.Parameters.AddWithValue("@telefono", txtTelefonoEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@email", txtCorreoEmpleado.Text)
+                    Comando.Parameters.AddWithValue("@genero", cmbGenero.SelectedItem.ToString)
+
+
+                    'Imprimo mensaje para confirmar modificacion
+                    If MsgBox("¿Esta seguro que desea modificar?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Guardar") = MsgBoxResult.Yes Then
+
+                        'Variable para obtener respuesta del servidor al ejecutar.
+                        Dim respuesta As Integer
+
+                        'Ejecuto el update
+                        respuesta = Comando.ExecuteNonQuery
+
+                        'Informo las modificaciones realizadas.
+                        MsgBox("Se guardaron los cambios  del empleado exitosamente", MsgBoxStyle.Information, "Guardar")
+                    End If
+                ElseIf txtDniEmpleado.Text <> dni Then
+                    MsgBox("El DNI que intenta ingresar ya existe", MsgBoxStyle.Critical, "Error al modificar")
+                    Conexion.Close()
+                    Exit Sub
+                End If
+
             Else
                 'Cierro Data Reader
                 drEmpleado.Close()
@@ -612,13 +646,12 @@ Public Class ABMEmpleados
 
                     'Informo las categorias modificadas.
                     MsgBox("Se guardaron los cambios  del empleado exitosamente", MsgBoxStyle.Information, "Guardar")
-                    Call LimpiarForms()
-
+                    
                 End If
-                Conexion.Close()
             End If
-
-
+            Call LimpiarForms()
+            txtBusqueda.Text = ""
+            Conexion.Close()
             Call CargarList(txtBusqueda.Text.ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -713,6 +746,7 @@ Public Class ABMEmpleados
                 MsgBox("Se agrego al empleado exitosamente", MsgBoxStyle.Information, "Agregar")
 
                 Call LimpiarForms()
+                txtBusqueda.Text = ""
             End If
             'Cierro conexion.
             Conexion.Close()
@@ -735,10 +769,11 @@ Public Class ABMEmpleados
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
         Call LimpiarForms()
+        txtBusqueda.Text = ""
     End Sub
 
     Private Sub chkDni_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDni.CheckedChanged
-        Call LimpiarForms()
+
         If chkDni.Checked Then
             chkNombre.Checked = False
         Else
@@ -747,7 +782,7 @@ Public Class ABMEmpleados
     End Sub
 
     Private Sub chkNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombre.CheckedChanged
-        Call LimpiarForms()
+
         If chkNombre.Checked Then
             chkDni.Checked = False
         Else
@@ -761,4 +796,5 @@ Public Class ABMEmpleados
         End If
         Call CargarList(txtBusqueda.Text.ToString)
     End Sub
+
 End Class

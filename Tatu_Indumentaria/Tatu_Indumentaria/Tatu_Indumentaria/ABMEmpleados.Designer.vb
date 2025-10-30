@@ -186,9 +186,9 @@ Partial Class ABMEmpleados
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(173, 110)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 19)
+        Me.Label2.Size = New System.Drawing.Size(106, 19)
         Me.Label2.TabIndex = 211
-        Me.Label2.Text = "Código Empleado"
+        Me.Label2.Text = "Código ________"
         '
         'Label1
         '
@@ -348,9 +348,9 @@ Partial Class ABMEmpleados
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.Label15.Location = New System.Drawing.Point(8, 38)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(104, 19)
+        Me.Label15.Size = New System.Drawing.Size(115, 19)
         Me.Label15.TabIndex = 240
-        Me.Label15.Text = "Buscar Clientes"
+        Me.Label15.Text = "Buscar Empleado"
         '
         'btnBuscar
         '
