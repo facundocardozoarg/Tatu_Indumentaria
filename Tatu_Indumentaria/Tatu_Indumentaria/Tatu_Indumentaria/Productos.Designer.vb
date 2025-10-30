@@ -332,7 +332,7 @@ Partial Class Productos
         Me.btnActulizarStock.Name = "btnActulizarStock"
         Me.btnActulizarStock.Size = New System.Drawing.Size(176, 39)
         Me.btnActulizarStock.TabIndex = 10
-        Me.btnActulizarStock.Text = "Actualizar Stock"
+        Me.btnActulizarStock.Text = "Stock"
         Me.btnActulizarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActulizarStock.UseVisualStyleBackColor = False
         '
