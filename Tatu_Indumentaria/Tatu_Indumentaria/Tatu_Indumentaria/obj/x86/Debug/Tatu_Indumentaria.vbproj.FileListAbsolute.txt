@@ -164,3 +164,4 @@ C:\Users\Acer\Desktop\copias de seguridad tatu_indumentaria\informes (Ultima cop
 C:\Users\Acer\Desktop\copias de seguridad tatu_indumentaria\informes (Ultima copia)\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Productos.resources
 C:\Users\Acer\Desktop\copias de seguridad tatu_indumentaria\informes (Ultima copia)\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.Stock.resources
 C:\Users\Acer\Desktop\copias de seguridad tatu_indumentaria\informes (Ultima copia)\Tatu_Indumentaria-6c4a5fcfeda9cc5db245cf5e6741016e31ea970c\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.vbproj.GenerateResource.Cache
+D:\Tatu Indumentaria - App\Tatu_Indumentaria\Tatu_Indumentaria\Tatu_Indumentaria\obj\x86\Debug\Tatu_Indumentaria.GenerarVenta.resources

@@ -27,7 +27,7 @@ Partial Class PantallaPrincipal
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.btnNuevaVenta = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -97,16 +97,16 @@ Partial Class PantallaPrincipal
         Me.Button10.Text = "Nueva Compra"
         Me.Button10.UseVisualStyleBackColor = False
         '
-        'Button8
+        'btnNuevaVenta
         '
-        Me.Button8.BackColor = System.Drawing.Color.LightCyan
-        Me.Button8.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Button8.Location = New System.Drawing.Point(417, 67)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(169, 31)
-        Me.Button8.TabIndex = 10
-        Me.Button8.Text = "Nueva Venta"
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.btnNuevaVenta.BackColor = System.Drawing.Color.LightCyan
+        Me.btnNuevaVenta.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.btnNuevaVenta.Location = New System.Drawing.Point(417, 67)
+        Me.btnNuevaVenta.Name = "btnNuevaVenta"
+        Me.btnNuevaVenta.Size = New System.Drawing.Size(169, 31)
+        Me.btnNuevaVenta.TabIndex = 10
+        Me.btnNuevaVenta.Text = "Nueva Venta"
+        Me.btnNuevaVenta.UseVisualStyleBackColor = False
         '
         'Button9
         '
@@ -399,7 +399,7 @@ Partial Class PantallaPrincipal
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Button10)
-        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.btnNuevaVenta)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnBuscar)
@@ -424,7 +424,7 @@ Partial Class PantallaPrincipal
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents btnNuevaVenta As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button

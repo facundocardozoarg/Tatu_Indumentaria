@@ -9,6 +9,7 @@ Public Class Stock
     Public id_modelo As Integer
     Public nombre_talle As String
     Public nombre_color As String
+    Private bmp As Bitmap
 
     Sub LimpiarForms()
         lstProductos.SelectedIndex = -1
@@ -466,5 +467,29 @@ Public Class Stock
         End If
 
         nombre_talle = cmbTalle.SelectedItem.ToString
+    End Sub
+
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+        ' Capturar la imagen del GroupBox (lo que se ve en pantalla)
+        bmp = New Bitmap(gpbFicha.Width, gpbFicha.Height)
+        gpbFicha.DrawToBitmap(bmp, New Rectangle(0, 0, gpbFicha.Width, gpbFicha.Height))
+
+        ' Mostrar cuadro de diálogo de impresora
+        If SelectImpre.ShowDialog() = DialogResult.OK Then
+            PrintDoc.PrinterSettings = SelectImpre.PrinterSettings
+
+            ' Configurar vista previa
+            VistaPrevia.Document = PrintDoc
+            VistaPrevia.WindowState = FormWindowState.Maximized
+
+            ' Mostrar vista previa
+            VistaPrevia.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub PrintDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDoc.PrintPage
+
+        e.Graphics.DrawImage(bmp, 0, 0)
+
     End Sub
 End Class

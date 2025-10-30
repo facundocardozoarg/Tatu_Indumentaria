@@ -179,6 +179,12 @@
     <Compile Include="frmGrillaProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GenerarVenta.Designer.vb">
+      <DependentUpon>GenerarVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Localidades.Designer.vb">
       <DependentUpon>Localidades.vb</DependentUpon>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGrillaProveedores.resx">
       <DependentUpon>frmGrillaProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarVenta.resx">
+      <DependentUpon>GenerarVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Localidades.resx">
       <DependentUpon>Localidades.vb</DependentUpon>

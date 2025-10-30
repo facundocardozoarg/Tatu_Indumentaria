@@ -743,7 +743,7 @@ Public Class ABMClientes
                 comando.Parameters.AddWithValue("@email", txtCorreo.Text)
                 comando.Parameters.AddWithValue("@genero", cmbGenero.SelectedItem.ToString)
                 comando.Parameters.AddWithValue("@fecha_nacimiento", dtpFechaNac.Value.ToString("yyyy-MM-dd"))
-                comando.Parameters.AddWithValue("@estado", 1)
+                comando.Parameters.AddWithValue("@estado", 0)
 
 
                 'declaro variable para respuesta del server

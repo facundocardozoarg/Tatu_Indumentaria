@@ -165,4 +165,8 @@ Public Class PantallaPrincipal
     End Sub
 
   
+    Private Sub btnNuevaVenta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevaVenta.Click
+        GenerarVenta.Show()
+        Me.Hide()
+    End Sub
 End Class
