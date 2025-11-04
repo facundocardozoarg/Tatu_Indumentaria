@@ -55,6 +55,8 @@ Partial Class PantallaPrincipal
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.btnEnvios = New System.Windows.Forms.Button()
         Me.btnEmpleados = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -381,12 +383,33 @@ Partial Class PantallaPrincipal
         Me.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEmpleados.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Symbol", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(7, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 19)
+        Me.Label4.TabIndex = 146
+        Me.Label4.Text = "INICIO"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(413, 525)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 147
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'PantallaPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1109, 570)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnAplicar)
         Me.Controls.Add(Me.txtDescuento)
@@ -452,4 +475,6 @@ Partial Class PantallaPrincipal
     Friend WithEvents btnClientes As System.Windows.Forms.Button
     Friend WithEvents btnEnvios As System.Windows.Forms.Button
     Friend WithEvents btnEmpleados As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

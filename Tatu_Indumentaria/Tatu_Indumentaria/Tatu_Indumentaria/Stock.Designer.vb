@@ -57,6 +57,7 @@ Partial Class Stock
         Me.SelectImpre = New System.Windows.Forms.PrintDialog()
         Me.VistaPrevia = New System.Windows.Forms.PrintPreviewDialog()
         Me.gpbFicha = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.ptbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpbFicha.SuspendLayout()
         Me.SuspendLayout()
@@ -407,12 +408,23 @@ Partial Class Stock
         Me.gpbFicha.TabIndex = 24
         Me.gpbFicha.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Symbol", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(10, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 19)
+        Me.Label3.TabIndex = 146
+        Me.Label3.Text = "Stock"
+        '
         'Stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(646, 740)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.gpbFicha)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
@@ -467,4 +479,5 @@ Partial Class Stock
     Friend WithEvents SelectImpre As System.Windows.Forms.PrintDialog
     Friend WithEvents VistaPrevia As System.Windows.Forms.PrintPreviewDialog
     Friend WithEvents gpbFicha As System.Windows.Forms.GroupBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

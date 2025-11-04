@@ -49,6 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
@@ -167,6 +168,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion_DB.vb" />
+    <Compile Include="frmFactura.Designer.vb">
+      <DependentUpon>frmFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmGrillaEmpleados.Designer.vb">
       <DependentUpon>frmGrillaEmpleados.vb</DependentUpon>
     </Compile>
@@ -284,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMTalle.resx">
       <DependentUpon>ABMTalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactura.resx">
+      <DependentUpon>frmFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGrillaEmpleados.resx">
       <DependentUpon>frmGrillaEmpleados.vb</DependentUpon>

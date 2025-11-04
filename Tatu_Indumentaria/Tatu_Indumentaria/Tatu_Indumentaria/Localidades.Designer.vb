@@ -28,6 +28,7 @@ Partial Class Localidades
         Me.btnCiudad = New System.Windows.Forms.Button()
         Me.btnProvincia = New System.Windows.Forms.Button()
         Me.btnPais = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -92,12 +93,23 @@ Partial Class Localidades
         Me.btnPais.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPais.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Symbol", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(0, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(218, 19)
+        Me.Label4.TabIndex = 146
+        Me.Label4.Text = "Administrador de  localidades"
+        '
         'Localidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(218, 339)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnCiudad)
@@ -117,4 +129,5 @@ Partial Class Localidades
     Friend WithEvents btnProvincia As System.Windows.Forms.Button
     Friend WithEvents btnPais As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

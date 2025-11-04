@@ -39,6 +39,7 @@ Partial Class ABMImagenes
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.pbxImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,7 +47,7 @@ Partial Class ABMImagenes
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(21, 425)
+        Me.Label3.Location = New System.Drawing.Point(21, 448)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 19)
         Me.Label3.TabIndex = 24
@@ -54,7 +55,7 @@ Partial Class ABMImagenes
         '
         'txtUrl
         '
-        Me.txtUrl.Location = New System.Drawing.Point(24, 445)
+        Me.txtUrl.Location = New System.Drawing.Point(24, 468)
         Me.txtUrl.Name = "txtUrl"
         Me.txtUrl.ReadOnly = True
         Me.txtUrl.Size = New System.Drawing.Size(406, 22)
@@ -65,7 +66,7 @@ Partial Class ABMImagenes
         Me.btnVolver.BackColor = System.Drawing.Color.LightCyan
         Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
-        Me.btnVolver.Location = New System.Drawing.Point(487, 440)
+        Me.btnVolver.Location = New System.Drawing.Point(487, 463)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(120, 49)
         Me.btnVolver.TabIndex = 19
@@ -78,7 +79,7 @@ Partial Class ABMImagenes
         Me.btnEliminar.BackColor = System.Drawing.Color.LightCyan
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(487, 340)
+        Me.btnEliminar.Location = New System.Drawing.Point(487, 363)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(120, 49)
         Me.btnEliminar.TabIndex = 18
@@ -91,7 +92,7 @@ Partial Class ABMImagenes
         Me.btnLimpiar.BackColor = System.Drawing.Color.LightCyan
         Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
-        Me.btnLimpiar.Location = New System.Drawing.Point(487, 285)
+        Me.btnLimpiar.Location = New System.Drawing.Point(487, 308)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(120, 49)
         Me.btnLimpiar.TabIndex = 22
@@ -104,7 +105,7 @@ Partial Class ABMImagenes
         Me.btnGuardar.BackColor = System.Drawing.Color.LightCyan
         Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
-        Me.btnGuardar.Location = New System.Drawing.Point(487, 177)
+        Me.btnGuardar.Location = New System.Drawing.Point(487, 200)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(120, 49)
         Me.btnGuardar.TabIndex = 21
@@ -117,7 +118,7 @@ Partial Class ABMImagenes
         Me.btnCargar.BackColor = System.Drawing.Color.LightCyan
         Me.btnCargar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(487, 122)
+        Me.btnCargar.Location = New System.Drawing.Point(487, 145)
         Me.btnCargar.Name = "btnCargar"
         Me.btnCargar.Size = New System.Drawing.Size(120, 49)
         Me.btnCargar.TabIndex = 17
@@ -129,7 +130,7 @@ Partial Class ABMImagenes
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(229, 96)
+        Me.Label2.Location = New System.Drawing.Point(229, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 19)
         Me.Label2.TabIndex = 16
@@ -140,14 +141,14 @@ Partial Class ABMImagenes
         Me.cmbColor.BackColor = System.Drawing.Color.SeaShell
         Me.cmbColor.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.cmbColor.FormattingEnabled = True
-        Me.cmbColor.Location = New System.Drawing.Point(232, 128)
+        Me.cmbColor.Location = New System.Drawing.Point(232, 151)
         Me.cmbColor.Name = "cmbColor"
         Me.cmbColor.Size = New System.Drawing.Size(198, 25)
         Me.cmbColor.TabIndex = 15
         '
         'pbxImagen
         '
-        Me.pbxImagen.Location = New System.Drawing.Point(232, 177)
+        Me.pbxImagen.Location = New System.Drawing.Point(232, 200)
         Me.pbxImagen.Name = "pbxImagen"
         Me.pbxImagen.Size = New System.Drawing.Size(198, 227)
         Me.pbxImagen.TabIndex = 14
@@ -159,7 +160,7 @@ Partial Class ABMImagenes
         Me.lstCodigos.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
         Me.lstCodigos.FormattingEnabled = True
         Me.lstCodigos.ItemHeight = 17
-        Me.lstCodigos.Location = New System.Drawing.Point(24, 96)
+        Me.lstCodigos.Location = New System.Drawing.Point(24, 119)
         Me.lstCodigos.Name = "lstCodigos"
         Me.lstCodigos.Size = New System.Drawing.Size(176, 293)
         Me.lstCodigos.TabIndex = 13
@@ -168,7 +169,7 @@ Partial Class ABMImagenes
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(21, 20)
+        Me.Label1.Location = New System.Drawing.Point(21, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(115, 19)
         Me.Label1.TabIndex = 12
@@ -178,7 +179,7 @@ Partial Class ABMImagenes
         '
         Me.txtCodigos.BackColor = System.Drawing.Color.SeaShell
         Me.txtCodigos.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.txtCodigos.Location = New System.Drawing.Point(24, 52)
+        Me.txtCodigos.Location = New System.Drawing.Point(24, 75)
         Me.txtCodigos.Name = "txtCodigos"
         Me.txtCodigos.Size = New System.Drawing.Size(176, 25)
         Me.txtCodigos.TabIndex = 11
@@ -192,7 +193,7 @@ Partial Class ABMImagenes
         Me.btnNuevo.BackColor = System.Drawing.Color.LightCyan
         Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.Location = New System.Drawing.Point(487, 66)
+        Me.btnNuevo.Location = New System.Drawing.Point(487, 89)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(120, 49)
         Me.btnNuevo.TabIndex = 144
@@ -204,7 +205,7 @@ Partial Class ABMImagenes
         '
         Me.btnModificar.BackColor = System.Drawing.Color.LightCyan
         Me.btnModificar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.btnModificar.Location = New System.Drawing.Point(487, 232)
+        Me.btnModificar.Location = New System.Drawing.Point(487, 255)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(120, 49)
         Me.btnModificar.TabIndex = 20
@@ -212,12 +213,23 @@ Partial Class ABMImagenes
         Me.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModificar.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Symbol", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(21, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(84, 19)
+        Me.Label4.TabIndex = 145
+        Me.Label4.Text = "IMAGENES"
+        '
         'ABMImagenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(696, 615)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtUrl)
@@ -259,4 +271,5 @@ Partial Class ABMImagenes
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

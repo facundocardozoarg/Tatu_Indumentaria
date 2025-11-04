@@ -28,9 +28,9 @@ Public Class PantallaPrincipal
         lblUsuario.Text = Login.usuario
 
         If Login.rol = "administrador" Then
-            btnProveedores.Visible = False
-            btnEmpleados.Visible = False
-            btnLocalidades.Visible = False
+            btnProveedores.Enabled = False
+            btnEmpleados.Enabled = False
+            btnLocalidades.Enabled = False
         End If
 
 
@@ -164,9 +164,15 @@ Public Class PantallaPrincipal
         Me.Close()
     End Sub
 
-  
+
     Private Sub btnNuevaVenta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevaVenta.Click
         GenerarVenta.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        frmFactura.Show()
+        Me.Hide()
+
     End Sub
 End Class

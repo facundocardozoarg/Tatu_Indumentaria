@@ -202,15 +202,13 @@ CREATE TABLE IF NOT EXISTS envio(
 /*---- TABLA VENTAS ----*/
 CREATE TABLE IF NOT EXISTS venta(
 	id_venta INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	codigo_venta VARCHAR(50) NOT NULL,
 	fecha_venta DATE NOT NULL,
-	descripcion_venta VARCHAR(50),
 	id_cliente INT UNSIGNED,
 	id_empleado INT UNSIGNED,
 	id_medio_pago SMALLINT UNSIGNED,
 	id_envio INT UNSIGNED,
 	CONSTRAINT pk_id_venta PRIMARY KEY(id_venta),
-	CONSTRAINT uk_codigo_venta UNIQUE KEY	(codigo_venta),
+
 	CONSTRAINT fk_venta_id_empleado FOREIGN KEY(id_empleado) REFERENCES empleado(id_empleado) ON DELETE RESTRICT,
 	CONSTRAINT fk_venta_id_cliente FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente) ON DELETE RESTRICT,
 	CONSTRAINT fk_venta_id_medio_pago FOREIGN KEY(id_medio_pago) REFERENCES medio_pago(id_medio_pago) ON DELETE RESTRICT,
@@ -226,7 +224,6 @@ CREATE TABLE IF NOT EXISTS detalle_venta(
 	descuento DECIMAL(10,2),
 	subtotal DECIMAL(10,2),
 	CONSTRAINT pk_id_detalle_venta PRIMARY KEY(id_detalle_venta),
-	
 	CONSTRAINT uk_venta_variante_producto UNIQUE KEY(id_venta,id_variante_producto),
 /*	CONSTRAINT uk_id_variante_producto UNIQUE KEY(id_variante_producto),*/
 	

@@ -320,7 +320,7 @@ Public Class ABMImagenes
                 pbxImagen.Image = Nothing
 
                 'pbPicture.
-                MsgBox("IMAGEN GUARDADA EN BD")
+                MsgBox("Imagen guardada con éxito", MsgBoxStyle.Information, "Imagen Guardada")
                 lstCodigos.SelectedIndex = -1
                 cmbColor.SelectedIndex = -1
 
