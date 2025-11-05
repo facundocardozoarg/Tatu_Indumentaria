@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D35E89F-1E77-4590-AE8A-C2DB91FB50D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Tatu_Indumentaria.My.MyApplication</StartupObject>
+    <RootNamespace>Tatu_Indumentaria</RootNamespace>
+    <AssemblyName>Tatu_Indumentaria</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Tatu_Indumentaria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Tatu_Indumentaria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABMCategorias.Designer.vb">
+      <DependentUpon>ABMCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMCiudades.Designer.vb">
+      <DependentUpon>ABMCiudades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMCiudades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMClientes.Designer.vb">
+      <DependentUpon>ABMClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMColor.Designer.vb">
+      <DependentUpon>ABMColor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMColor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMEmpleados.Designer.vb">
+      <DependentUpon>ABMEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMEmpresaEnvios.Designer.vb">
+      <DependentUpon>ABMEmpresaEnvios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMEmpresaEnvios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMGestionEnvio.Designer.vb">
+      <DependentUpon>ABMGestionEnvio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMGestionEnvio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMImagenes.Designer.vb">
+      <DependentUpon>ABMImagenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMImagenes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMMarcas.Designer.vb">
+      <DependentUpon>ABMMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMMediosPagos.Designer.vb">
+      <DependentUpon>ABMMediosPagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMMediosPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMModelo.Designer.vb">
+      <DependentUpon>ABMModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMModelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMPaises.Designer.vb">
+      <DependentUpon>ABMPaises.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMPaises.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMProveedores.Designer.vb">
+      <DependentUpon>ABMProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMProvincias.Designer.vb">
+      <DependentUpon>ABMProvincias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMProvincias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMTalle.Designer.vb">
+      <DependentUpon>ABMTalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMTalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion_DB.vb" />
+    <Compile Include="frmFactura.Designer.vb">
+      <DependentUpon>frmFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrillaEmpleados.Designer.vb">
+      <DependentUpon>frmGrillaEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrillaEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrillaProveedores.Designer.vb">
+      <DependentUpon>frmGrillaProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrillaProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarVenta.Designer.vb">
+      <DependentUpon>GenerarVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Localidades.Designer.vb">
+      <DependentUpon>Localidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Localidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuEnvios.Designer.vb">
+      <DependentUpon>MenuEnvios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuEnvios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVenta.Designer.vb">
+      <DependentUpon>MenuVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PantallaPrincipal.Designer.vb">
+      <DependentUpon>PantallaPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.vb">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.vb">
+      <DependentUpon>Stock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ABMCategorias.resx">
+      <DependentUpon>ABMCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMCiudades.resx">
+      <DependentUpon>ABMCiudades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMClientes.resx">
+      <DependentUpon>ABMClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMColor.resx">
+      <DependentUpon>ABMColor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMEmpleados.resx">
+      <DependentUpon>ABMEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMEmpresaEnvios.resx">
+      <DependentUpon>ABMEmpresaEnvios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMGestionEnvio.resx">
+      <DependentUpon>ABMGestionEnvio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMImagenes.resx">
+      <DependentUpon>ABMImagenes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMMarcas.resx">
+      <DependentUpon>ABMMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMMediosPagos.resx">
+      <DependentUpon>ABMMediosPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMModelo.resx">
+      <DependentUpon>ABMModelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMPaises.resx">
+      <DependentUpon>ABMPaises.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMProveedores.resx">
+      <DependentUpon>ABMProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMProvincias.resx">
+      <DependentUpon>ABMProvincias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMTalle.resx">
+      <DependentUpon>ABMTalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactura.resx">
+      <DependentUpon>frmFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrillaEmpleados.resx">
+      <DependentUpon>frmGrillaEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrillaProveedores.resx">
+      <DependentUpon>frmGrillaProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarVenta.resx">
+      <DependentUpon>GenerarVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localidades.resx">
+      <DependentUpon>Localidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuEnvios.resx">
+      <DependentUpon>MenuEnvios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVenta.resx">
+      <DependentUpon>MenuVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos.resx">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
